@@ -14,18 +14,28 @@
     <title>Delivery App</title>
 </head>
 <body>
-        <!-- HEADER -->
-    <header class="header">
-    <div class="header__logo">
-      <h1>NombreDelLocal</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <a href="#" class="header__logo-link">
+          <i class="fa-solid fa-utensils"></i>
+          <h1>NombreDelLocal</h1>
+        </a>
+      </div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li>
+            <a href="#carrito" class="header__carrito-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="carrito__contador" id="contador-carrito">0</span>
+            </a>
+          </li>
+          <li><a href="#pedido">Mi pedido</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="header__nav">
-      <ul>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#carrito">Carrito</a></li>
-        <li><a href="#pedido">Mi pedido</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>

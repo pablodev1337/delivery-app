@@ -11,3 +11,77 @@
     --border: #e5e0d8;
     --primary-dark: #e0501c;
 }
+
+.header {
+  background-color: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 0 24px;
+}
+
+.header__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.header__logo-link i {
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.header__logo-link h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.header__nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.header__nav a:hover {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+.header__carrito-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.carrito__contador {
+  background-color: var(--primary);
+  color: var(--surface);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

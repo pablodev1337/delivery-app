@@ -14,18 +14,30 @@
     <title>Delivery App</title>
 </head>
 <body>
-        <!-- HEADER -->
-    <header class="header">
-    <div class="header__logo">
-      <h1>NombreDelLocal</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <a href="#" class="header__logo-link">
+          <span class="header__logo-badge">
+            <i class="fa-solid fa-utensils"></i>
+          </span>
+          <h1>NombreDelLocal</h1>
+        </a>
+      </div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li>
+            <a href="#carrito" class="header__carrito-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="carrito__contador" id="contador-carrito">0</span>
+            </a>
+          </li>
+          <li><a href="#pedido">Mi pedido</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="header__nav">
-      <ul>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#carrito">Carrito</a></li>
-        <li><a href="#pedido">Mi pedido</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
@@ -37,10 +49,10 @@
 
         <!-- Ejemplo de tarjeta de producto (se repite por cada plato) -->
         <article class="producto" data-id="1">
-          <img src="media/producto1.jpg" alt="Nombre del producto">
+          <img src="media/producto1.avif" alt="Nombre del producto">
           <h3 class="producto__nombre">Hamburguesa Clásica</h3>
           <p class="producto__descripcion">Carne, lechuga, tomate y queso.</p>
-          <p class="producto__precio">$3500</p>
+          <p class="producto__precio">$7.500</p>
           <button class="producto__agregar" type="button">Agregar al carrito</button>
         </article>
 
@@ -48,7 +60,7 @@
           <img src="media/producto2.jpg" alt="Nombre del producto">
           <h3 class="producto__nombre">Pizza Muzzarella</h3>
           <p class="producto__descripcion">Salsa de tomate y muzzarella.</p>
-          <p class="producto__precio">$4200</p>
+          <p class="producto__precio">$11.000</p>
           <button class="producto__agregar" type="button">Agregar al carrito</button>
         </article>
 

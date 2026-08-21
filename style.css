@@ -11,3 +11,139 @@
     --border: #e5e0d8;
     --primary-dark: #e0501c;
 }
+
+/* =========================
+    CARRITO - KEVIN
+   ========================= */
+
+.carrito {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.carrito h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--secondary);
+}
+
+.carrito__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carrito__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.carrito__item-nombre {
+    font-weight: bold;
+    color: var(--text);
+    flex: 1;
+}
+
+.carrito__item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cantidad__restar,
+.cantidad__sumar {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cantidad__restar:hover,
+.cantidad__sumar:hover {
+    background-color: var(--primary-dark);
+}
+
+.cantidad__valor {
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.carrito__item-subtotal {
+    min-width: 80px;
+    text-align: right;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.carrito__item-eliminar {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: var(--danger);
+    color: white;
+    cursor: pointer;
+}
+
+.carrito__item-eliminar:hover {
+    opacity: 0.85;
+}
+
+.carrito__total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+/* =========================
+    CARRITO - RESPONSIVE - kevin
+   ========================= */
+
+@media (max-width: 600px) {
+    .carrito {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    .carrito__item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .carrito__item-nombre {
+        width: 100%;
+    }
+
+    .carrito__item-cantidad {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .carrito__item-subtotal {
+        text-align: left;
+    }
+
+    .carrito__item-eliminar {
+        width: 100%;
+    }
+
+    .carrito__total {
+        justify-content: space-between;
+    }
+}

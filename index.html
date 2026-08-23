@@ -91,34 +91,41 @@
     </aside>
 
     <!-- SECCIÓN FORMULARIO DE PEDIDO -->
-    <section id="pedido" class="formulario-pedido">
-      <h2>Confirmar Pedido</h2>
-      <form id="form-pedido">
-        <div class="campo">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required>
+    <section id="checkout-formulario">
+      <h2>Formulario de Pedido</h2>
+      <form action="#" method="POST">
+            
+        <!-- Nombre completo -->
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido:</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
         </div>
 
-        <div class="campo">
-          <label for="direccion">Dirección de entrega</label>
-          <input type="text" id="direccion" name="direccion" required>
+        <!-- Dirección de entrega -->
+        <div class="form-group">
+          <label for="direccion">Dirección de Entrega:</label>
+          <input type="text" id="direccion" name="direccion" required placeholder="Calle, número, depto...">
         </div>
 
-        <div class="campo">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" required>
+        <!-- Teléfono de contacto -->
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 3814000000">
         </div>
 
-        <div class="campo">
-          <label for="metodo-pago">Método de pago</label>
-          <select id="metodo-pago" name="metodo-pago">
+        <!-- Método de pago -->
+        <div class="form-group">
+          <label for="metodo-pago">Método de Pago:</label>
+          <select id="metodo-pago" name="metodo-pago" required>
+            <option value="" disabled selected>Seleccioná una opción</option>
             <option value="efectivo">Efectivo</option>
-            <option value="tarjeta">Tarjeta</option>
-            <option value="transferencia">Transferencia</option>
+            <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+            <option value="transferencia">Transferencia Bancaria</option>
           </select>
         </div>
 
-        <button type="submit" class="btn-confirmar">Confirmar Pedido</button>
+        <!-- Botón de envío -->
+        <button type="submit">Confirmar Pedido</button>
       </form>
     </section>
 

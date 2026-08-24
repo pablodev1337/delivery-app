@@ -29,6 +29,38 @@ La aplicación permite a un usuario navegar un menú de comidas, agregar product
 - CSS3
 - JavaScript
 
+## Flexbox
+
+- En el `.header__container`, para alinear el logo y la barra de navegación en una misma fila.
+- En cada `.carrito__item`, para distribuir el nombre del producto, el control de cantidad, el subtotal y el botón de eliminar en una línea.
+- En `.footer-contenido`, para organizar las tres columnas del footer (logo/descripción, enlaces y contacto) una al lado de la otra, con `flex-wrap` para que se acomoden en pantallas chicas.
+- En `.campo` (dentro del formulario), para apilar verticalmente el label y el input de cada campo.
+
+## Grid
+
+- En `.menu__grid`, para mostrar las tarjetas de producto en columnas que se adaptan automáticamente al ancho de pantalla (`repeat(auto-fit, minmax(...))`).
+- En `#form-pedido`, para organizar los campos del formulario de pedido en una grilla vertical con espaciado uniforme.
+
+## Variables CSS
+
+- Definidas en `:root`:
+- `--primary` y `--primary-dark`: color naranja principal, usado en botones y elementos de acción.
+- `--secondary`: azul oscuro, usado en textos fuertes y títulos.
+- `--success`: verde, para estados positivos (confirmación de pedido).
+- `--warning`: ámbar, para precios y alertas.
+- `--danger`: rojo, para el botón de eliminar producto.
+- `--background`: color de fondo general de la página.
+- `--surface`: blanco, usado en tarjetas y el header.
+- `--text` y `--text-muted`: colores de texto principal y secundario.
+- `--border`: color de bordes en tarjetas, inputs y separadores.
+
+## Responsive Design 
+
+Usamos media queries con dos puntos de quiebre principales:
+ 
+- **Tablet (hasta 900px)**: la grilla de productos reduce el tamaño mínimo de columna, el footer centra su contenido, y el espaciado del nav se ajusta.
+- **Mobile (hasta 600px)**: el header pasa de fila a columna, la grilla de productos se convierte en una sola columna, el formulario y la confirmación reducen sus márgenes laterales, y las columnas del footer se apilan una debajo de la otra ocupando el 100% del ancho.
+
 ## Cómo ejecutar el proyecto
 
 1. Cloná el repositorio:
@@ -45,4 +77,4 @@ La aplicación permite a un usuario navegar un menú de comidas, agregar product
 
 ## Estado del proyecto
 
-🚧 En desarrollo — Trabajo Práctico nro. 1: estructura HTML inicial y organización del repositorio.
+En desarrollo — TP nro. 2: interfaz completa con Flexbox, Grid, variables CSS y diseño responsive.

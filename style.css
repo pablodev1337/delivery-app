@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #ff6b35;       /* naranja - botones principales, "Agregar al carrito" */
   --primary-dark: #e0501c;  /* naranja oscuro - hover de botones */
@@ -11,6 +15,73 @@
   --text-muted: #6c6c6c;    /* descripciones, texto secundario */
   --border: #535352;        /* bordes suaves */
 }
+
+@media (max-width: 900px) {
+  .header__nav ul {
+    gap: 20px;
+    margin-top: 0;
+  }
+ 
+  .menu__grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+ 
+  .footer-contenido {
+    justify-content: center;
+    text-align: center;
+  }
+ 
+  .footer-col {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__container {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+ 
+  .header__nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ 
+  .menu h2 {
+    margin-top: 32px;
+    font-size: 1.5rem;
+  }
+ 
+  .menu__grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+ 
+  .formulario-pedido {
+    margin: 24px 16px 0;
+    padding: 20px 16px;
+  }
+ 
+  .confirmacion {
+    margin: 20px 16px 0;
+    padding: 20px 16px;
+  }
+ 
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .footer-col {
+    width: 100%;
+    min-width: 0;
+    margin: 12px 0;
+    text-align: center;
+  }
+}
  
 .header {
   background-color: var(--surface);
@@ -21,6 +92,7 @@
 body {
   background-color: var(--background);
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
  
 .header__container {
@@ -58,7 +130,7 @@ body {
 }
  
 .header__logo-link h1 {
-  font-size: 20px;
+  font-size: 1.4rem;
   color: var(--primary);
   margin: 0;
 }
@@ -106,6 +178,11 @@ body {
   justify-content: center;
 }
  
+.menu {
+  padding-top: 2rem;
+  min-height: 60vh;
+}
+
 .menu h2 {
   text-align: center;
   margin-top: 75px;
@@ -434,7 +511,7 @@ body {
  
 .footer-col {
     flex: 1;
-    min-width: 250px;
+    min-width: 15vw;
     margin: 20px;
 }
  

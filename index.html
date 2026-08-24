@@ -14,30 +14,18 @@
     <title>Delivery App</title>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header__container">
-      <div class="header__logo">
-        <a href="#" class="header__logo-link">
-          <span class="header__logo-badge">
-            <i class="fa-solid fa-utensils"></i>
-          </span>
-          <h1>NombreDelLocal</h1>
-        </a>
-      </div>
-      <nav class="header__nav">
-        <ul>
-          <li><a href="#menu">Menú</a></li>
-          <li>
-            <a href="#carrito" class="header__carrito-link">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span class="carrito__contador" id="contador-carrito">0</span>
-            </a>
-          </li>
-          <li><a href="#pedido">Mi pedido</a></li>
-        </ul>
-      </nav>
+        <!-- HEADER -->
+    <header class="header">
+    <div class="header__logo">
+      <h1>NombreDelLocal</h1>
     </div>
+    <nav class="header__nav">
+      <ul>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#carrito">Carrito</a></li>
+        <li><a href="#pedido">Mi pedido</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -52,7 +40,7 @@
           <img src="media/producto1.avif" alt="Nombre del producto">
           <h3 class="producto__nombre">Hamburguesa Clásica</h3>
           <p class="producto__descripcion">Carne, lechuga, tomate y queso.</p>
-          <p class="producto__precio">$7.500</p>
+          <p class="producto__precio">$3500</p>
           <button class="producto__agregar" type="button">Agregar al carrito</button>
         </article>
 
@@ -60,7 +48,7 @@
           <img src="media/producto2.jpg" alt="Nombre del producto">
           <h3 class="producto__nombre">Pizza Muzzarella</h3>
           <p class="producto__descripcion">Salsa de tomate y muzzarella.</p>
-          <p class="producto__precio">$11.000</p>
+          <p class="producto__precio">$4200</p>
           <button class="producto__agregar" type="button">Agregar al carrito</button>
         </article>
 
@@ -91,57 +79,80 @@
     </aside>
 
     <!-- SECCIÓN FORMULARIO DE PEDIDO -->
-    <section id="checkout-formulario">
-      <h2>Formulario de Pedido</h2>
-      <form action="#" method="POST">
-            
-        <!-- Nombre completo -->
-        <div class="form-group">
-          <label for="nombre">Nombre y Apellido:</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
-        </div>
+    <section id="pedido" class="formulario-pedido">
+        <h2>Confirmar Pedido</h2>
+        <form id="form-pedido">
+            <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
 
-        <!-- Dirección de entrega -->
-        <div class="form-group">
-          <label for="direccion">Dirección de Entrega:</label>
-          <input type="text" id="direccion" name="direccion" required placeholder="Calle, número, depto...">
-        </div>
+            <div class="campo">
+                <label for="direccion">Dirección de entrega</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div>
 
-        <!-- Teléfono de contacto -->
-        <div class="form-group">
-          <label for="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 3814000000">
-        </div>
+            <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
 
-        <!-- Método de pago -->
-        <div class="form-group">
-          <label for="metodo-pago">Método de Pago:</label>
-          <select id="metodo-pago" name="metodo-pago" required>
-            <option value="" disabled selected>Seleccioná una opción</option>
-            <option value="efectivo">Efectivo</option>
-            <option value="tarjeta">Tarjeta de Crédito / Débito</option>
-            <option value="transferencia">Transferencia Bancaria</option>
-          </select>
-        </div>
+            <div class="campo">
+                <label for="metodo-pago">Método de pago</label>
+                    <select id="metodo-pago" name="metodo-pago">
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta</option>
+                        <option value="transferencia">Transferencia</option>
+                    </select>
+            </div>
 
-        <!-- Botón de envío -->
-        <button type="submit">Confirmar Pedido</button>
-      </form>
+            <button type="submit" class="btn-confirmar">Confirmar Pedido</button>
+        </form>
     </section>
 
-    <!-- SECCIÓN CONFIRMACIÓN (se muestra tras enviar el formulario) -->
+<!-- SECCIÓN CONFIRMACIÓN (se muestra tras enviar el formulario) -->
     <section id="confirmacion" class="confirmacion oculto">
-      <h2>¡Pedido Confirmado!</h2>
-      <p>Gracias por tu compra. Tu pedido está siendo preparado.</p>
-      <p id="resumen-pedido"></p>
+        <h2>¡Pedido Confirmado!</h2>
+        <p>Gracias por tu compra. Tu pedido está siendo preparado.</p>
+        <p id="resumen-pedido"></p>
     </section>
 
-  </main>
+</main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; 2026 NombreDelLocal. Todos los derechos reservados.</p>
-  </footer>
+<!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-contenido">
+<!-- Columna 1: Logo y descripción -->
+            <div class="footer-col">
+                <h3>NombreDelLocal</h3>
+                <p>Especialistas en <strong>entregar pédidos</strong>, para su comodidad.</p>
+            </div>
+
+<!-- Columna 2: Enlaces rápidos -->
+            <div class="footer-col">
+                <h3>Enlaces</h3>
+                <ul>  
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#carrito">Carrito</a></li>
+                    <li><a href="#mi-pedido">Mi pedido</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+<!-- Columna 3: Contacto -->
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📧 delivery-app@gmail.com</p>
+                <p>📞 +54 9 381 xxx xxxx</p>
+                <p>📍 San Miguel de Tucumán, Argentina</p>
+            </div>
+        </div>
+
+<!-- Derechos reservados -->
+        <div class="footer-copy">
+        <p>&copy; 2026 Delivery-app. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

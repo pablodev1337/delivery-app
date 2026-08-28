@@ -61,6 +61,16 @@ Usamos media queries con dos puntos de quiebre principales:
 - **Tablet (hasta 900px)**: la grilla de productos reduce el tamaño mínimo de columna, el footer centra su contenido, y el espaciado del nav se ajusta.
 - **Mobile (hasta 600px)**: el header pasa de fila a columna, la grilla de productos se convierte en una sola columna, el formulario y la confirmación reducen sus márgenes laterales, y las columnas del footer se apilan una debajo de la otra ocupando el 100% del ancho.
 
+## ¿Qué estrategias de SEO implementamos?
+ 
+- **Meta description específica**: la etiqueta `<meta name="description">` describe puntualmente de qué trata la app ("Aplicación web de pedidos de comida estilo delivery"), en vez de un texto genérico.
+- **Viewport para mobile-friendly**: `<meta name="viewport" content="width=device-width, initial-scale=1.0">` asegura que el sitio se vea bien en celulares, algo que Google prioriza al rankear páginas (mobile-first indexing).
+- **HTML semántico**: usamos `header`, `nav`, `main`, `section`, `aside`, `article` y `footer` en vez de `div` genéricos, lo que ayuda a los buscadores a entender la estructura y jerarquía del contenido.
+- **Jerarquía de encabezados ordenada**: un solo `h1` (el nombre del local), `h2` por cada sección principal (Menú, Carrito, Confirmar Pedido) y `h3` por cada producto individual, sin saltos de nivel.
+- **Atributos `alt` descriptivos en las imágenes**: cada imagen de producto tiene un `alt` que describe el plato real (por ejemplo, "Hamburguesa con lechuga, tomate y queso" en vez de un texto genérico como "imagen de producto"), lo que mejora el posicionamiento en Google Imágenes y la accesibilidad para lectores de pantalla.
+- **Etiquetas Open Graph**: agregamos `og:title`, `og:description` y `og:image` para que, al compartir el link en redes sociales o WhatsApp, se muestre una vista previa con título, descripción e imagen en vez de un link pelado.
+- **Favicon configurado**: mejora el reconocimiento de marca en pestañas del navegador y resultados de búsqueda.
+
 ## Cómo ejecutar el proyecto
 
 1. Cloná el repositorio:

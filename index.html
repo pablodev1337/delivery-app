@@ -7,26 +7,32 @@
     <meta name="author" content="Pablo Cano, Kevin Mendoza, Alberto Exequiel and Matias Maza">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Delivery App - Pedidos de comida">
+    <meta property="og:description" content="Pedí tu comida favorita online">
+    <meta property="og:image" content="media/preview.jpg">
     <script src="https://kit.fontawesome.com/a7c4a546ef.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
     <title>Delivery App</title>
 </head>
 <body>
-        <!-- HEADER -->
+    <!-- HEADER -->
     <header class="header">
-    <div class="header__logo">
-      <h1>NombreDelLocal</h1>
-    </div>
-    <nav class="header__nav">
-      <ul>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#carrito">Carrito</a></li>
-        <li><a href="#pedido">Mi pedido</a></li>
-      </ul>
-    </nav>
-  </header>
+      <div class="header__container">
+        <div class="header__logo">
+          <img src="media/favicon.ico" alt="Logo NombreDelLocal" class="header__logo-img">
+          <h1>NombreDelLocal</h1>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-pill">
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#carrito">Carrito</a></li>
+            <li><a href="#pedido">Mi pedido</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
   <main>
 
@@ -37,7 +43,7 @@
 
         <!-- Ejemplo de tarjeta de producto (se repite por cada plato) -->
         <article class="producto" data-id="1">
-          <img src="media/producto1.avif" alt="Nombre del producto">
+          <img src="media/producto1.avif" alt="Hamburguesa con lechuga, tomate y queso">
           <h3 class="producto__nombre">Hamburguesa Clásica</h3>
           <p class="producto__descripcion">Carne, lechuga, tomate y queso.</p>
           <p class="producto__precio">$3500</p>
@@ -45,7 +51,7 @@
         </article>
 
         <article class="producto" data-id="2">
-          <img src="media/producto2.jpg" alt="Nombre del producto">
+          <img src="media/producto2.jpg" alt="Pizza con salsa de tomate y muzzarella">
           <h3 class="producto__nombre">Pizza Muzzarella</h3>
           <p class="producto__descripcion">Salsa de tomate y muzzarella.</p>
           <p class="producto__precio">$4200</p>

@@ -3,162 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Aplicación web de pedidos de comida estilo delivery">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
     <meta name="author" content="Pablo Cano, Kevin Mendoza, Alberto Exequiel and Matias Maza">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Delivery App - Pedidos de comida">
     <meta property="og:description" content="Pedí tu comida favorita online">
     <meta property="og:image" content="media/preview.jpg">
-    <script src="https://kit.fontawesome.com/a7c4a546ef.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon">
     <title>Delivery App</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header__container">
-        <div class="header__logo">
-          <img src="media/favicon.ico" alt="Logo NombreDelLocal" class="header__logo-img">
-          <h1>NombreDelLocal</h1>
-        </div>
-        <nav class="header__nav">
-          <ul class="header__nav-pill">
-            <li><a href="#menu">Menú</a></li>
-            <li><a href="#carrito">Carrito</a></li>
-            <li><a href="#pedido">Mi pedido</a></li>
-          </ul>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm brand-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <img src="media/favicon.ico" alt="Logo NombreDelLocal" class="rounded-circle border border-2 border-white" width="40" height="40">
+                    <span class="fw-bold fs-5">NombreDelLocal</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2 brand-nav-pill">
+                        <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#carrito">Carrito</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pedido">Mi pedido</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-      </div>
     </header>
 
-  <main>
+    <main>
 
-    <!-- SECCIÓN MENÚ -->
-    <section id="menu" class="menu">
-      <h2>Nuestro Menú</h2>
-      <div class="menu__grid">
+        <!-- SECCIÓN MENÚ -->
+        <section id="menu" class="py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 brand-title">Nuestro Menú</h2>
+                <div class="row g-4">
 
-        <!-- Ejemplo de tarjeta de producto (se repite por cada plato) -->
-        <article class="producto" data-id="1">
-          <img src="media/producto1.avif" alt="Hamburguesa con lechuga, tomate y queso">
-          <h3 class="producto__nombre">Hamburguesa Clásica</h3>
-          <p class="producto__descripcion">Carne, lechuga, tomate y queso.</p>
-          <p class="producto__precio">$3500</p>
-          <button class="producto__agregar" type="button">Agregar al carrito</button>
-        </article>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <article class="card h-100 shadow-sm brand-card" data-id="1">
+                            <img src="media/producto1.avif" class="card-img-top" alt="Hamburguesa con lechuga, tomate, queso y papas fritas" style="height: 180px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">Hamburguesa Clásica y Papas Fritas</h3>
+                                <p class="card-text text-muted small flex-grow-1">Carne, lechuga, tomate, queso y papas fritas.</p>
+                                <p class="fw-bold brand-precio fs-5">$11.999</p>
+                                <button class="btn brand-btn-primary w-100" type="button">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2" type="button">Más información</button>
+                            </div>
+                        </article>
+                    </div>
 
-        <article class="producto" data-id="2">
-          <img src="media/producto2.jpg" alt="Pizza con salsa de tomate y muzzarella">
-          <h3 class="producto__nombre">Pizza Muzzarella</h3>
-          <p class="producto__descripcion">Salsa de tomate y muzzarella.</p>
-          <p class="producto__precio">$4200</p>
-          <button class="producto__agregar" type="button">Agregar al carrito</button>
-        </article>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <article class="card h-100 shadow-sm brand-card" data-id="2">
+                            <img src="media/producto2.jpg" class="card-img-top" alt="Pizza con salsa de tomate y muzzarella" style="height: 180px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">Pizza de Muzzarella</h3>
+                                <p class="card-text text-muted small flex-grow-1">Salsa de tomate y muzzarella.</p>
+                                <p class="fw-bold brand-precio fs-5">$11.999</p>
+                                <button class="btn brand-btn-primary w-100" type="button">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2" type="button">Más información</button>
+                            </div>
+                        </article>
+                    </div>
 
-        <!-- ... más productos ... -->
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <article class="card h-100 shadow-sm brand-card" data-id="1">
+                            <img src="media/producto3.png" class="card-img-top" alt="Sandwich de milanesa, jamon, queso, huevo frito, tomate y lechuga con papas fritas" style="height: 180px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">Sandwich de Milanesa y Papas Fritas</h3>
+                                <p class="card-text text-muted small flex-grow-1">Milanesa frita, jamon, queso, huevo frito, tomate y lechuga con papas fritas.</p>
+                                <p class="fw-bold brand-precio fs-5">$14.999</p>
+                                <button class="btn brand-btn-primary w-100" type="button">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2" type="button">Más información</button>
+                            </div>
+                        </article>
+                    </div>
 
-      </div>
-    </section>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <article class="card h-100 shadow-sm brand-card" data-id="1">
+                            <img src="media/producto4.jpg" class="card-img-top" alt="Empanadas Fritas de carne, huevo, cebolla y pimiento" style="height: 180px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title h5">Empanadas Fritas</h3>
+                                <p class="card-text text-muted small flex-grow-1">Carne, huevo, cebolla y pimiento.</p>
+                                <p class="fw-bold brand-precio fs-5">$17.999</p>
+                                <button class="btn brand-btn-primary w-100" type="button">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2" type="button">Más información</button>
+                            </div>
+                        </article>
+                    </div>
 
-    <!-- SECCIÓN CARRITO -->
-    <aside id="carrito" class="carrito">
-      <h2>Tu Carrito</h2>
-      <ul class="carrito__lista">
-        <!-- Ejemplo de ítem del carrito, se genera dinámicamente con JS -->
-        <li class="carrito__item" data-id="1">
-          <span class="carrito__item-nombre">Hamburguesa Clásica</span>
-          <div class="carrito__item-cantidad">
-            <button class="cantidad__restar" type="button">-</button>
-            <span class="cantidad__valor">1</span>
-            <button class="cantidad__sumar" type="button">+</button>
-          </div>
-          <span class="carrito__item-subtotal">$3500</span>
-          <button class="carrito__item-eliminar" type="button">Eliminar</button>
-        </li>
-      </ul>
-      <div class="carrito__total">
-        <p>Total: <span id="total-precio">$0</span></p>
-      </div>
-    </aside>
+                </div>
+            </div>
+        </section>
 
-    <!-- SECCIÓN FORMULARIO DE PEDIDO -->
-    <section id="pedido" class="formulario-pedido">
-        <h2>Confirmar Pedido</h2>
-        <form id="form-pedido">
-            <div class="campo">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <!-- SECCIÓN CARRITO -->
+        <aside id="carrito" class="py-5 bg-white">
+            <div class="container">
+                <div class="card shadow-sm brand-card mx-auto" style="max-width: 900px;">
+                    <div class="card-body p-4">
+                        <h2 class="h4 fw-bold mb-4 brand-title">Tu Carrito</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 py-3" data-id="1">
+                                <span class="fw-bold">Hamburguesa Clásica</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button class="btn btn-sm brand-btn-primary" type="button">-</button>
+                                    <span class="fw-bold">1</span>
+                                    <button class="btn btn-sm brand-btn-primary" type="button">+</button>
+                                </div>
+                                <span class="fw-bold text-end">$11.999</span>
+                                <button class="btn btn-sm btn-danger" type="button">Eliminar</button>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-end mt-4">
+                            <p class="fs-5 fw-bold brand-title mb-0">Total: <span id="total-precio">$11.999</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- SECCIÓN FORMULARIO DE PEDIDO -->
+        <section id="pedido" class="py-5">
+            <div class="container">
+                <div class="card shadow-sm brand-card mx-auto" style="max-width: 700px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center fw-bold mb-4 brand-title">Confirmar Pedido</h2>
+                        <form id="form-pedido" class="row g-3">
+                            <div class="col-12">
+                                <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="direccion" class="form-label fw-semibold">Dirección de entrega</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="telefono" class="form-label fw-semibold">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="metodo-pago" class="form-label fw-semibold">Método de pago</label>
+                                <select class="form-select" id="metodo-pago" name="metodo-pago">
+                                    <option value="efectivo">Efectivo</option>
+                                    <option value="tarjeta">Tarjeta</option>
+                                    <option value="transferencia">Transferencia</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn brand-btn-primary w-100 py-2 fw-bold">Confirmar Pedido</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONFIRMACIÓN -->
+        <section id="confirmacion" class="py-5 d-none">
+            <div class="container">
+                <div class="alert brand-alert-success text-center mx-auto p-4 shadow-sm" style="max-width: 700px;">
+                    <h2 class="h4 fw-bold">¡Pedido Confirmado!</h2>
+                    <p class="mb-1">Gracias por tu compra. Tu pedido está siendo preparado.</p>
+                    <p id="resumen-pedido" class="fw-bold mb-0"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="brand-footer pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">NombreDelLocal</h3>
+                    <p>Especialistas en <strong>entregar pedidos</strong>, para su comodidad.</p>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">Enlaces</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#menu" class="brand-footer-link">Menú</a></li>
+                        <li><a href="#carrito" class="brand-footer-link">Carrito</a></li>
+                        <li><a href="#pedido" class="brand-footer-link">Mi pedido</a></li>
+                        <li><a href="#contacto" class="brand-footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">Contacto</h3>
+                    <p class="mb-1">📧 delivery-app@gmail.com</p>
+                    <p class="mb-1">📞 +54 9 381 xxx xxxx</p>
+                    <p class="mb-0">📍 San Miguel de Tucumán, Argentina</p>
+                </div>
             </div>
 
-            <div class="campo">
-                <label for="direccion">Dirección de entrega</label>
-                <input type="text" id="direccion" name="direccion" required>
-            </div>
-
-            <div class="campo">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" required>
-            </div>
-
-            <div class="campo">
-                <label for="metodo-pago">Método de pago</label>
-                    <select id="metodo-pago" name="metodo-pago">
-                        <option value="efectivo">Efectivo</option>
-                        <option value="tarjeta">Tarjeta</option>
-                        <option value="transferencia">Transferencia</option>
-                    </select>
-            </div>
-
-            <button type="submit" class="btn-confirmar">Confirmar Pedido</button>
-        </form>
-    </section>
-
-<!-- SECCIÓN CONFIRMACIÓN (se muestra tras enviar el formulario) -->
-    <section id="confirmacion" class="confirmacion oculto">
-        <h2>¡Pedido Confirmado!</h2>
-        <p>Gracias por tu compra. Tu pedido está siendo preparado.</p>
-        <p id="resumen-pedido"></p>
-    </section>
-
-</main>
-
-<!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-contenido">
-<!-- Columna 1: Logo y descripción -->
-            <div class="footer-col">
-                <h3>NombreDelLocal</h3>
-                <p>Especialistas en <strong>entregar pédidos</strong>, para su comodidad.</p>
-            </div>
-
-<!-- Columna 2: Enlaces rápidos -->
-            <div class="footer-col">
-                <h3>Enlaces</h3>
-                <ul>  
-                    <li><a href="#menu">Menú</a></li>
-                    <li><a href="#carrito">Carrito</a></li>
-                    <li><a href="#mi-pedido">Mi pedido</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-
-<!-- Columna 3: Contacto -->
-            <div class="footer-col">
-                <h3>Contacto</h3>
-                <p>📧 delivery-app@gmail.com</p>
-                <p>📞 +54 9 381 xxx xxxx</p>
-                <p>📍 San Miguel de Tucumán, Argentina</p>
-            </div>
-        </div>
-
-<!-- Derechos reservados -->
-        <div class="footer-copy">
-        <p>&copy; 2026 Delivery-app. Todos los derechos reservados.</p>
+            <hr class="mt-4">
+            <p class="text-center small mb-0">&copy; 2026 Delivery-app. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

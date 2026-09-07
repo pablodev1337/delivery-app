@@ -1,19 +1,120 @@
-* {
-  box-sizing: border-box;
+:root {
+  --primary: #ff6b35;
+  --primary-dark: #e0501c;
+  --secondary: #2b2d42;
+  --success: #2ecc71;
+  --danger: #e63946;
+  --background: #fdf6ec;
+  --surface: #ffffff;
+  --border: #535352;
 }
 
-:root {
-  --primary: #ff6b35;       /* naranja - botones principales, "Agregar al carrito" */
-  --primary-dark: #e0501c;  /* naranja oscuro - hover de botones */
-  --secondary: #2b2d42;     /* azul oscuro casi negro - header, textos fuertes */
-  --success: #2ecc71;       /* verde - confirmación de pedido, estados positivos */
-  --warning: #f4a300;       /* amarillo/ámbar - alertas, precios destacados */
-  --danger: #e63946;        /* rojo - eliminar producto del carrito */
-  --background: #fdf6ec;    /* beige muy claro - fondo general, cálido */
-  --surface: #ffffff;       /* blanco - tarjetas de producto */
-  --text: #1c1c1c;          /* texto principal */
-  --text-muted: #6c6c6c;    /* descripciones, texto secundario */
-  --border: #535352;        /* bordes suaves */
+body {
+  background-color: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.brand-navbar {
+  background: linear-gradient(135deg, #f5deb3 0%, #f2c98b 100%);
+}
+
+.brand-navbar .navbar-brand span,
+.brand-navbar .navbar-toggler {
+  color: var(--secondary);
+}
+
+.brand-nav-pill {
+  background-color: var(--surface);
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.brand-nav-pill .nav-link {
+  position: relative;
+  color: var(--secondary) !important;
+  font-weight: 700;
+  padding: 8px 18px !important;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.brand-nav-pill .nav-link::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 999px;
+  background-color: transparent;
+  transform: scale(0.85);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+.brand-nav-pill .nav-link:hover {
+  color: var(--surface) !important;
+}
+
+.brand-nav-pill .nav-link:hover::before {
+  background-color: var(--primary);
+  transform: scale(1);
+}
+
+/* TÍTULOS Y TEXTOS DE MARCA */
+.brand-title {
+  color: var(--secondary);
+}
+
+.brand-precio {
+  color: var(--primary);
+}
+
+/* TARJETAS (productos, carrito, formulario) */
+.brand-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* BOTÓN PRINCIPAL */
+.brand-btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.brand-btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+/* ALERTA DE CONFIRMACIÓN */
+.brand-alert-success {
+  background: linear-gradient(135deg, #effae9 0%, #f8fff4 100%);
+  border: 1px solid rgba(46, 204, 113, 0.28);
+  color: #1d7a3b;
+}
+
+/* FOOTER */
+.brand-footer {
+  background: linear-gradient(135deg, #f5deb3 0%, #f2c98b 100%);
+  color: var(--secondary);
+}
+
+.brand-footer-link {
+  color: #4b4444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.brand-footer-link:hover {
+  color: #6A5ACD;
+}
+
+/* CSS VIEJO
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -430,13 +531,6 @@ body {
   color: var(--secondary);
 }
 
-@media (max-width: 600px) {
-  .confirmacion {
-    margin: 20px 16px 0;
-    padding: 20px 16px;
-  }
-}
-
 .footer {
   background: linear-gradient(135deg, #f5deb3 0%, #f2c98b 100%);
   color: var(--secondary);
@@ -447,7 +541,7 @@ body {
 .footer-contenido {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* se adapta en pantallas pequeñas */
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -487,7 +581,7 @@ body {
 }
 
 .footer-col ul li a:hover {
-  color: #6A5ACD; /* cambio de color al pasar el mouse */
+  color: #6A5ACD;
 }
 
 .footer-copy {
@@ -522,3 +616,4 @@ body {
     text-align: center;
   }
 }
+*/

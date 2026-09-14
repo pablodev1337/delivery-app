@@ -61,6 +61,18 @@ body {
   transform: scale(1);
 }
 
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .brand-nav-pill {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: fit-content;
+  }
+}
+
 /* TÍTULOS Y TEXTOS DE MARCA */
 .brand-title {
   color: var(--secondary);

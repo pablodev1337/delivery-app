@@ -10,6 +10,7 @@ La aplicación permite a un usuario navegar un menú de comidas, agregar product
 
 * Menú de comidas.
 * Agregar productos al carrito.
+* Más información de productos.
 * Cambiar cantidades de productos.
 * Saber más información de los productos.
 * Calcular total del pedido.
@@ -155,4 +156,4 @@ O puedes ver la página funcional en: https://delivery-app-tup.netlify.app/
 
 ## Estado del proyecto
 
-En desarrollo — TP nro. 3: Refactorización/Integración de Bootstrap 5.3.3 y Bootstrap Icons.
+En desarrollo — TP nro. 4: Funcionalidades agregadas con JavaScript.

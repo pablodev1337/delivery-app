@@ -25,7 +25,6 @@ La aplicación permite a un usuario navegar un menú de comidas, agregar product
 ## Integrantes del grupo
 
 * Pablo Cano
-* Matias Maza
 * Alberto Roman
 * Kevin Mendoza
 

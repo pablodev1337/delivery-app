@@ -18,26 +18,96 @@
 </head>
 <body>
 
-    <!-- HEADER / NAVBAR -->
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top shadow-sm brand-navbar">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                    <img src="media/favicon.ico" alt="Logo NombreDelLocal" class="rounded-circle border border-2 border-white" width="40" height="40">
-                    <span class="fw-bold fs-5">NombreDelLocal</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+    <!-- PRESENTACIÓN -->
+    <div id="intro-screen" class="intro-screen">
+        <div class="intro-content text-center text-white">
+            <img src="media/favicon.ico" alt="Logo de NombreDelLocal" class="intro-logo">
+            <h1 class="fw-bold">
+                ¡Bienvenidos a NombreDelLocal!
+            </h1>
+        </div>
+    </div>
+
+    <!-- HEADER / HERO -->
+    <header id="inicio" class="hero position-relative">
+
+        <!-- CARRUSEL BOOTSTRAP -->
+        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="media/carrusel-producto1.jpg" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Hamburguesa de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto2.avif" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Pizza de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto3.jpg" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Sandwich de milanesa de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto4.jpg" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Empanadas de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto5.avif" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Postres de NombreDelLocal">
+                </div>
+            </div>
+        </div>
+
+        <!-- Oscurecimiento del carrusel -->
+        <div class="hero-overlay"></div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg brand-navbar">
+            <div class="container-fluid px-4">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navMenu">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2 brand-nav-pill">
-                        <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#carrito">Carrito</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#pedido">Mi pedido</a></li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-around align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">
+                                Menú
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pedido">
+                                Mi pedido
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre-nosotros">
+                                Sobre Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">
+                                Contacto
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+
+        <!-- CONTENIDO DEL HERO -->
+        <div class="hero-content position-relative text-center text-white">
+            <img src="media/favicon.ico" alt="Logo de NombreDelLocal" class="hero-logo">
+            <h1 class="display-4 fw-bold">
+                ¡Bienvenidos a NombreDelLocal!
+            </h1>
+        </div>
+
     </header>
 
     <main>

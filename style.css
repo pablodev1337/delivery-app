@@ -9,56 +9,166 @@
   --border: #535352;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* PRESENTACIÓN */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("media/imagen-bienvenida.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    visibility: visible;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.intro-screen.intro-complete {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-logo {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    animation:
+        logoEntrada 1.2s ease both;
+}
+
+.intro-content h1 {
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.7);
+    animation:
+        textoEntrada 1.2s ease 0.25s both;
+}
+
+@keyframes logoEntrada {
+    from {
+        opacity: 0;
+        transform: scale(0.65);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes textoEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #222;
+}
+
+
+/* CARRUSEL */
+
+.hero-carousel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-carousel .carousel-item {
+    transition:
+        transform 1.2s ease-in-out;
+}
+
+.hero-carousel img {
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+
+/* OSCURECIMIENTO DEL HERO */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        rgba(0, 0, 0, 0.38);
+    pointer-events: none;
+}
+
+
 /* NAVBAR */
+
 .brand-navbar {
-  background: linear-gradient(135deg, #f5deb3 0%, #f2c98b 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background:
+        rgba(43, 45, 66, 0.55);
+    backdrop-filter:
+        blur(6px);
+    -webkit-backdrop-filter:
+        blur(6px);
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.2);
 }
 
-.brand-navbar .navbar-brand span,
-.brand-navbar .navbar-toggler {
-  color: var(--secondary);
+.brand-navbar .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    transition:
+        color 0.3s ease;
 }
 
-.brand-nav-pill {
-  background-color: var(--surface);
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  padding: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.brand-navbar .nav-link:hover {
+    color: var(--primary);
 }
 
-.brand-nav-pill .nav-link {
-  position: relative;
-  color: var(--secondary) !important;
-  font-weight: 700;
-  padding: 8px 18px !important;
-  z-index: 1;
-  transition: color 0.3s ease;
+
+/* HERO CONTENT */
+
+.hero-content {
+    z-index: 2;
 }
 
-.brand-nav-pill .nav-link::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 999px;
-  background-color: transparent;
-  transform: scale(0.85);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: -1;
-}
-
-.brand-nav-pill .nav-link:hover {
-  color: var(--surface) !important;
-}
-
-.brand-nav-pill .nav-link:hover::before {
-  background-color: var(--primary);
-  transform: scale(1);
+.hero-logo {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
 }
 
 /* TÍTULOS Y TEXTOS DE MARCA */
@@ -167,6 +277,62 @@ body {
   align-items: center;
 }
 
+
+/* RESPONSIVE (presentación / hero / navbar) */
+
+@media (max-width: 991px) {
+    .brand-navbar .navbar-collapse {
+        margin-top: 0.5rem;
+        padding: 1rem;
+        background:
+            rgba(43, 45, 66, 0.94);
+        border-radius: 12px;
+    }
+
+    .brand-navbar .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-logo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .intro-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .carrito-item-js {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 /* CSS VIEJO
 * {
   box-sizing: border-box;
@@ -252,15 +418,6 @@ body {
 
 .header__nav-pill a:active {
   transform: translateY(0);
-}
-
-@media (max-width: 600px) {
-  .header__container {
-    flex-direction: column;
-    height: auto;
-    padding: 12px 16px;
-    gap: 12px;
-  }
 }
 
 .menu {

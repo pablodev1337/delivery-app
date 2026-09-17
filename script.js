@@ -144,3 +144,34 @@ modalInfo.addEventListener("click", (evento) => {
         modalInfo.classList.remove("activo");
     }
 });
+
+
+/* ==========================================================
+   PRESENTACIÓN INICIAL
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const introScreen = document.getElementById("intro-screen");
+    const menu = document.getElementById("menu");
+
+    // Evitamos que el navegador restaure una posición anterior al actualizar.
+    if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo(0, 0);
+
+    // La presentación permanece visible aproximadamente 3 segundos.
+    setTimeout(() => {
+        // Primero ocultamos suavemente la presentación.
+        introScreen.classList.add("intro-complete");
+
+        // Luego hacemos el desplazamiento suave hacia el menú.
+        requestAnimationFrame(() => {
+            menu.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }, 3000);
+});

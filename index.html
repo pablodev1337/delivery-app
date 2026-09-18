@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Aplicación web de pedidos de comida estilo delivery">
     <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
-    <meta name="author" content="Pablo Cano, Kevin Mendoza y Alberto Exequiel">
+    <meta name="author" content="Pablo Cano, Kevin Mendoza, Alberto Exequiel and Matias Maza">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Delivery App - Pedidos de comida">
@@ -17,6 +17,7 @@
     <title>Delivery App</title>
 </head>
 <body>
+
     <!-- PRESENTACIÓN -->
     <div id="intro-screen" class="intro-screen">
         <div class="intro-content text-center text-white">
@@ -27,920 +28,303 @@
         </div>
     </div>
 
-
-    <!-- ==================================================
-         HEADER / HERO
-    =================================================== -->
-
+    <!-- HEADER / HERO -->
     <header id="inicio" class="hero position-relative">
 
-        <!-- ==================================================
-             CARRUSEL BOOTSTRAP
-        =================================================== -->
-
+        <!-- CARRUSEL BOOTSTRAP -->
         <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="4000">
-
             <div class="carousel-inner h-100">
-
                 <div class="carousel-item active h-100">
                     <img src="media/carrusel-producto1.jpg" class="d-block w-100 h-100 object-fit-cover"
                         alt="Hamburguesa de NombreDelLocal">
                 </div>
-
                 <div class="carousel-item h-100">
                     <img src="media/carrusel-producto2.avif" class="d-block w-100 h-100 object-fit-cover"
                         alt="Pizza de NombreDelLocal">
                 </div>
-
                 <div class="carousel-item h-100">
                     <img src="media/carrusel-producto3.jpg" class="d-block w-100 h-100 object-fit-cover"
                         alt="Sandwich de milanesa de NombreDelLocal">
                 </div>
-
                 <div class="carousel-item h-100">
                     <img src="media/carrusel-producto4.jpg" class="d-block w-100 h-100 object-fit-cover"
                         alt="Empanadas de NombreDelLocal">
                 </div>
-
                 <div class="carousel-item h-100">
-                    <img src="media/carrusel-producto5.jpg" class="d-block w-100 h-100 object-fit-cover"
-                        alt="Producto de NombreDelLocal">
+                    <img src="media/carrusel-producto5.avif" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Postres de NombreDelLocal">
                 </div>
-
             </div>
-
         </div>
 
-
         <!-- Oscurecimiento del carrusel -->
-
         <div class="hero-overlay"></div>
 
-
-        <!-- ==================================================
-             NAVBAR
-        =================================================== -->
-
+        <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg brand-navbar">
-
             <div class="container-fluid px-4">
-
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
-
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
-
-
                 <div class="collapse navbar-collapse" id="navbarNav">
-
                     <ul class="navbar-nav w-100 justify-content-around align-items-center">
-
                         <li class="nav-item">
                             <a class="nav-link" href="#inicio">
                                 Inicio
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="#menu">
                                 Menú
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="#pedido">
                                 Mi pedido
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="#sobre-nosotros">
                                 Sobre Nosotros
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="#contacto">
                                 Contacto
                             </a>
                         </li>
-
                     </ul>
-
                 </div>
-
             </div>
-
         </nav>
 
 
-        <!-- ==================================================
-             CONTENIDO DEL HERO
-        =================================================== -->
-
+        <!-- CONTENIDO DEL HERO -->
         <div class="hero-content position-relative text-center text-white">
-
             <img src="media/favicon.ico" alt="Logo de NombreDelLocal" class="hero-logo">
-
             <h1 class="display-4 fw-bold">
                 ¡Bienvenidos a NombreDelLocal!
             </h1>
-
         </div>
 
     </header>
 
-
-    <!-- ==================================================
-         CONTENIDO PRINCIPAL
-    =================================================== -->
-
     <main>
 
-
-        <!-- ==================================================
-             MENÚ
-        =================================================== -->
-
+        <!-- SECCIÓN MENÚ -->
         <section id="menu" class="py-5">
-
             <div class="container">
-
-                <h2 class="text-center fw-bold mb-5 brand-title">
-
-                    Nuestro Menú
-
-                </h2>
-
-
+                <h2 class="text-center fw-bold mb-5 brand-title">Nuestro Menú</h2>
                 <div class="row g-4">
 
-
-                    <!-- PRODUCTO 1 -->
-
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-
-                        <article class="card h-100 shadow-sm border-0">
-
-                            <img src="media/producto1.avif" class="card-img-top producto-imagen"
-                                alt="Hamburguesa con lechuga, tomate, queso y papas fritas">
-
+                        <article class="card h-100 shadow-sm brand-card" data-id="1">
+                            <img src="media/producto1.avif" class="card-img-top" alt="Hamburguesa con lechuga, tomate, queso y papas fritas" style="height: 180px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
-
-                                <h3 class="card-title h5 fw-bold">
-                                    Hamburguesa Clásica y Papas Fritas
-                                </h3>
-
-                                <p class="card-text text-muted small flex-grow-1">
-
-                                    Carne, lechuga, tomate, queso y papas fritas.
-
-                                </p>
-
-                                <p class="fw-bold fs-5 brand-precio">
-
-                                    $11.999
-
-                                </p>
-
-
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button"
-                                    data-id="1" data-nombre="Hamburguesa Clásica y Papas Fritas" data-precio="11999">
-
-                                    Agregar al carrito
-
-                                </button>
-
-
-                                <button class="btn btn-outline-secondary w-100 mt-2 btn-mas-info" type="button"
-                                    data-bs-toggle="modal" data-bs-target="#modal-info"
-                                    data-nombre="Hamburguesa Clásica y Papas Fritas" data-imagen="media/producto1.avif"
-                                    data-ingredientes="Pan brioche horneado en casa,Medallón de carne vacuna 100% Angus,Queso cheddar fundido,Lechuga mantecosa,Tomate perita fileteado,Cebolla morada encurtida,Salsa especial de la casa,Papas fritas cortadas a cuchillo"
-                                    data-elaboracion="En la parrilla de NombreDelLocal sellamos cada medallón a fuego vivo para conservar sus jugos, justo antes de armar la hamburguesa sobre pan brioche recién horneado. Las papas se cortan a mano todos los días y se fríen dos veces.">
-
+                                <h3 class="card-title h5">Hamburguesa Clásica y Papas Fritas</h3>
+                                <p class="card-text text-muted small flex-grow-1">Carne, lechuga, tomate, queso y papas fritas.</p>
+                                <p class="fw-bold brand-precio fs-5">$11.999</p>
+                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="1" data-nombre="Hamburguesa Clásica y Papas Fritas" data-precio="11999">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
+                                        data-nombre="Hamburguesa Clásica y Papas Fritas"
+                                        data-imagen="media/producto1.avif"
+                                        data-ingredientes="Pan brioche horneado en casa,Medallón de carne vacuna 100% Angus,Queso cheddar fundido,Lechuga mantecosa,Tomate perita fileteado,Cebolla morada encurtida,Salsa especial de la casa,Papas fritas cortadas a cuchillo"
+                                        data-elaboracion="En la parrilla de NombreDelLocal sellamos cada medallón a fuego vivo para conservar sus jugos, justo antes de armar la hamburguesa sobre pan brioche recién horneado. Las papas se cortan a mano todos los días y se fríen dos veces, al estilo de las bistronómicas porteñas, para lograr un exterior crocante y un interior bien tierno.">
                                     Más información
-
                                 </button>
-
                             </div>
-
                         </article>
-
                     </div>
 
-
-                    <!-- PRODUCTO 2 -->
-
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-
-                        <article class="card h-100 shadow-sm border-0">
-
-                            <img src="media/producto2.jpg" class="card-img-top producto-imagen"
-                                alt="Pizza con salsa de tomate y muzzarella">
-
+                        <article class="card h-100 shadow-sm brand-card" data-id="2">
+                            <img src="media/producto2.jpg" class="card-img-top" alt="Pizza con salsa de tomate y muzzarella" style="height: 180px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
-
-                                <h3 class="card-title h5 fw-bold">
-                                    Pizza de Muzzarella
-                                </h3>
-
-                                <p class="card-text text-muted small flex-grow-1">
-
-                                    Salsa de tomate y muzzarella.
-
-                                </p>
-
-                                <p class="fw-bold fs-5 brand-precio">
-
-                                    $11.999
-
-                                </p>
-
-
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button"
-                                    data-id="2" data-nombre="Pizza de Muzzarella" data-precio="11999">
-
-                                    Agregar al carrito
-
-                                </button>
-
-
-                                <button class="btn btn-outline-secondary w-100 mt-2 btn-mas-info" type="button"
-                                    data-bs-toggle="modal" data-bs-target="#modal-info"
-                                    data-nombre="Pizza de Muzzarella" data-imagen="media/producto2.jpg"
-                                    data-ingredientes="Masa madre fermentada 24 horas,Salsa de tomate San Marzano,Muzzarella de elaboración diaria,Orégano fresco,Hilo de aceite de oliva extra virgen"
-                                    data-elaboracion="Nuestra masa fermenta lentamente durante un día entero. Se cocina en horno de piedra a leña hasta lograr un borde inflado y crocante.">
-
+                                <h3 class="card-title h5">Pizza de Muzzarella</h3>
+                                <p class="card-text text-muted small flex-grow-1">Salsa de tomate y muzzarella.</p>
+                                <p class="fw-bold brand-precio fs-5">$11.999</p>
+                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="2" data-nombre="Pizza de Muzzarella" data-precio="11999">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
+                                        data-nombre="Pizza de Muzzarella"
+                                        data-imagen="media/producto2.jpg"
+                                        data-ingredientes="Masa madre fermentada 24 horas,Salsa de tomate San Marzano,Muzzarella de elaboración diaria,Orégano fresco,Hilo de aceite de oliva extra virgen"
+                                        data-elaboracion="Nuestra masa fermenta lentamente durante un día entero, lo que le da esa textura liviana y alveolada típica de las pizzerías de barrio. Se cocina en horno de piedra a leña, a más de 400°C, hasta lograr un borde inflado y crocante, con la muzzarella justo en su punto de fundido.">
                                     Más información
-
                                 </button>
-
                             </div>
-
                         </article>
-
                     </div>
 
-
-                    <!-- PRODUCTO 3 -->
-
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-
-                        <article class="card h-100 shadow-sm border-0">
-
-                            <img src="media/producto3.png" class="card-img-top producto-imagen"
-                                alt="Sandwich de milanesa con papas fritas">
-
+                        <article class="card h-100 shadow-sm brand-card" data-id="3">
+                            <img src="media/producto3.png" class="card-img-top" alt="Sandwich de milanesa, jamon, queso, huevo frito, tomate y lechuga con papas fritas" style="height: 180px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
-
-                                <h3 class="card-title h5 fw-bold">
-                                    Sandwich de Milanesa y Papas Fritas
-                                </h3>
-
-                                <p class="card-text text-muted small flex-grow-1">
-
-                                    Milanesa frita, jamón, queso, huevo frito, tomate y lechuga con papas fritas.
-
-                                </p>
-
-                                <p class="fw-bold fs-5 brand-precio">
-
-                                    $14.999
-
-                                </p>
-
-
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button"
-                                    data-id="3" data-nombre="Sandwich de Milanesa y Papas Fritas" data-precio="14999">
-
-                                    Agregar al carrito
-
-                                </button>
-
-
-                                <button class="btn btn-outline-secondary w-100 mt-2 btn-mas-info" type="button"
-                                    data-bs-toggle="modal" data-bs-target="#modal-info"
-                                    data-nombre="Sandwich de Milanesa y Papas Fritas" data-imagen="media/producto3.png"
-                                    data-ingredientes="Milanesa de ternera apanada a mano,Pan casero tostado,Jamón cocido,Queso fundido,Huevo frito con yema líquida,Tomate fresco,Lechuga crocante,Papas fritas caseras"
-                                    data-elaboracion="Apanamos la milanesa a mano con pan rallado casero y la freímos al momento del pedido para que llegue caliente y crocante.">
-
+                                <h3 class="card-title h5">Sandwich de Milanesa y Papas Fritas</h3>
+                                <p class="card-text text-muted small flex-grow-1">Milanesa frita, jamon, queso, huevo frito, tomate y lechuga con papas fritas.</p>
+                                <p class="fw-bold brand-precio fs-5">$14.999</p>
+                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="3" data-nombre="Sandwich de Milanesa y Papas Fritas" data-precio="14999">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
+                                        data-nombre="Sandwich de Milanesa y Papas Fritas"
+                                        data-imagen="media/producto3.png"
+                                        data-ingredientes="Milanesa de ternera apanada a mano,Pan casero tostado,Jamón cocido,Queso fundido,Huevo frito con yema líquida,Tomate fresco,Lechuga crocante,Papas fritas caseras"
+                                        data-elaboracion="Apanamos la milanesa a mano con pan rallado casero y la freímos al momento del pedido para que llegue caliente y crocante. Se arma en capas sobre pan casero tostado, coronada con un huevo frito de yema líquida, al estilo de los bodegones tradicionales del centro de la ciudad.">
                                     Más información
-
                                 </button>
-
                             </div>
-
                         </article>
-
                     </div>
 
-
-                    <!-- PRODUCTO 4 -->
-
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-
-                        <article class="card h-100 shadow-sm border-0">
-
-                            <img src="media/producto4.jpg" class="card-img-top producto-imagen" alt="Empanadas fritas">
-
+                        <article class="card h-100 shadow-sm brand-card" data-id="4">
+                            <img src="media/producto4.jpg" class="card-img-top" alt="Empanadas Fritas de carne, huevo, cebolla y pimiento" style="height: 180px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
-
-                                <h3 class="card-title h5 fw-bold">
-                                    Empanadas Fritas
-                                </h3>
-
-                                <p class="card-text text-muted small flex-grow-1">
-
-                                    Carne, huevo, cebolla y pimiento.
-
-                                </p>
-
-                                <p class="fw-bold fs-5 brand-precio">
-
-                                    $17.999
-
-                                </p>
-
-
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button"
-                                    data-id="4" data-nombre="Empanadas Fritas (docena)" data-precio="17999">
-
-                                    Agregar al carrito
-
-                                </button>
-
-
-                                <button class="btn btn-outline-secondary w-100 mt-2 btn-mas-info" type="button"
-                                    data-bs-toggle="modal" data-bs-target="#modal-info" data-nombre="Empanadas Fritas"
-                                    data-imagen="media/producto4.jpg"
-                                    data-ingredientes="Masa casera estirada a mano,Carne cortada a cuchillo,Cebolla salteada,Pimiento rojo,Huevo duro picado,Aceitunas verdes,Comino y pimentón dulce"
-                                    data-elaboracion="Seguimos una receta tradicional del norte argentino: carne cortada a cuchillo, cebolla y pimiento. El repulgue se hace a mano y se fríen al momento.">
-
+                                <h3 class="card-title h5">Empanadas Fritas</h3>
+                                <p class="card-text text-muted small flex-grow-1">Carne, huevo, cebolla y pimiento.</p>
+                                <p class="fw-bold brand-precio fs-5">$17.999</p>
+                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="4" data-nombre="Empanadas Fritas (docena)" data-precio="17999">Agregar al carrito</button>
+                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
+                                        data-nombre="Empanadas Fritas"
+                                        data-imagen="media/producto4.jpg"
+                                        data-ingredientes="Masa casera estirada a mano,Carne cortada a cuchillo,Cebolla salteada,Pimiento rojo,Huevo duro picado,Aceitunas verdes,Comino y pimentón dulce"
+                                        data-elaboracion="Seguimos la receta tradicional del norte argentino: carne cortada a cuchillo (nunca picada), salteada lentamente con cebolla y pimiento hasta que sueltan todo su sabor. El repulgue se hace a mano, una por una, y se fríen al momento en aceite bien caliente hasta lograr una masa dorada y crocante, como en las cocinas de campo.">
                                     Más información
-
                                 </button>
-
                             </div>
-
                         </article>
-
                     </div>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- ==================================================
-             PEDIDO + CARRITO
-        =================================================== -->
-
-        <section id="pedido" class="py-5 bg-light">
-
+        <!-- SECCIÓN CARRITO -->
+        <aside id="carrito" class="py-5 bg-white">
             <div class="container">
-
-                <h2 class="text-center fw-bold mb-5 brand-title">
-
-                    Mi Pedido
-
-                </h2>
-
-
-                <div class="row g-4 align-items-start">
-
-
-                    <!-- CARRITO -->
-
-                    <div class="col-12 col-lg-6">
-
-                        <div id="carrito" class="card shadow-sm h-100 border-0">
-
-                            <div class="card-body p-4">
-
-                                <h3 class="h4 fw-bold mb-4">
-                                    <i class="bi bi-cart3 me-2"></i>
-                                    Tu Carrito
-                                </h3>
-
-
-                                <ul id="lista-carrito" class="list-group list-group-flush">
-
-                                </ul>
-
-
-                                <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-
-                                    <span class="fw-bold">
-                                        Total:
-                                    </span>
-
-                                    <span id="total-precio" class="fs-5 fw-bold brand-precio">
-
-                                        $0
-
-                                    </span>
-
+                <div class="card shadow-sm brand-card mx-auto" style="max-width: 900px;">
+                    <div class="card-body p-4">
+                        <h2 class="h4 fw-bold mb-4 brand-title">Tu Carrito</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 py-3" data-id="1">
+                                <span class="fw-bold">Hamburguesa Clásica</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button class="btn btn-sm brand-btn-primary" type="button">-</button>
+                                    <span class="fw-bold">1</span>
+                                    <button class="btn btn-sm brand-btn-primary" type="button">+</button>
                                 </div>
-
-                            </div>
-
+                                <span class="fw-bold text-end">$11.999</span>
+                                <button class="btn btn-sm btn-danger" type="button">Eliminar</button>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-end mt-4">
+                            <p class="fs-5 fw-bold brand-title mb-0">Total: <span id="total-precio">$11.999</span></p>
                         </div>
-
                     </div>
-
-
-                    <!-- FORMULARIO -->
-
-                    <div class="col-12 col-lg-6">
-
-                        <div class="card shadow-sm border-0">
-
-                            <div class="card-body p-4 p-md-5">
-
-                                <h3 class="text-center fw-bold mb-4">
-
-                                    <i class="bi bi-receipt me-2"></i>
-                                    Confirmar Pedido
-
-                                </h3>
-
-
-                                <form id="form-pedido" class="row g-3">
-
-
-                                    <div class="col-12">
-
-                                        <label for="nombre" class="form-label fw-semibold">
-
-                                            Nombre completo
-
-                                        </label>
-
-                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
-
-                                    </div>
-
-
-                                    <div class="col-12">
-
-                                        <label for="direccion" class="form-label fw-semibold">
-
-                                            Dirección de entrega
-
-                                        </label>
-
-                                        <input type="text" class="form-control" id="direccion" name="direccion"
-                                            required>
-
-                                    </div>
-
-
-                                    <div class="col-12">
-
-                                        <label for="telefono" class="form-label fw-semibold">
-
-                                            Teléfono
-
-                                        </label>
-
-                                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
-
-                                    </div>
-
-
-                                    <div class="col-12">
-
-                                        <label for="metodo-pago" class="form-label fw-semibold">
-
-                                            Método de pago
-
-                                        </label>
-
-                                        <select class="form-select" id="metodo-pago" name="metodo-pago">
-
-                                            <option value="Efectivo">
-                                                Efectivo
-                                            </option>
-
-                                            <option value="Tarjeta">
-                                                Tarjeta
-                                            </option>
-
-                                            <option value="Transferencia">
-                                                Transferencia
-                                            </option>
-
-                                        </select>
-
-                                    </div>
-
-
-                                    <div class="col-12 mt-4">
-
-                                        <button type="submit" class="btn brand-btn-primary w-100 py-2 fw-bold">
-
-                                            <i class="bi bi-check-circle me-2"></i>
-                                            Confirmar Pedido
-
-                                        </button>
-
-                                    </div>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
-
-
-                <!-- CONFIRMACIÓN -->
-
-                <div id="confirmacion" class="d-none mt-5">
-
-                    <div class="alert alert-success text-center mx-auto p-4 shadow-sm" style="max-width: 700px;">
-
-                        <h3 class="h4 fw-bold">
-                            <i class="bi bi-check-circle-fill me-2"></i>
-                            ¡Pedido Confirmado!
-                        </h3>
-
-                        <p class="mb-1">
-                            Gracias por tu compra.
-                            Tu pedido está siendo preparado.
-                        </p>
-
-                        <p id="resumen-pedido" class="fw-bold mb-0">
-                        </p>
-
-                    </div>
-
-                </div>
-
             </div>
+        </aside>
 
+        <!-- SECCIÓN FORMULARIO DE PEDIDO -->
+        <section id="pedido" class="py-5">
+            <div class="container">
+                <div class="card shadow-sm brand-card mx-auto" style="max-width: 700px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center fw-bold mb-4 brand-title">Confirmar Pedido</h2>
+                        <form id="form-pedido" class="row g-3">
+                            <div class="col-12">
+                                <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="direccion" class="form-label fw-semibold">Dirección de entrega</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="telefono" class="form-label fw-semibold">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="metodo-pago" class="form-label fw-semibold">Método de pago</label>
+                                <select class="form-select" id="metodo-pago" name="metodo-pago">
+                                    <option value="efectivo">Efectivo</option>
+                                    <option value="tarjeta">Tarjeta</option>
+                                    <option value="transferencia">Transferencia</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn brand-btn-primary w-100 py-2 fw-bold">Confirmar Pedido</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
 
-
-        <!-- ==================================================
-             SOBRE NOSOTROS
-        =================================================== -->
-
-        <section id="sobre-nosotros" class="py-5">
-
+        <!-- SECCIÓN CONFIRMACIÓN -->
+        <section id="confirmacion" class="py-5 d-none">
             <div class="container">
-
-                <div class="row align-items-center g-5">
-
-
-                    <div class="col-12 col-lg-6">
-
-                        <span class="text-uppercase fw-bold small brand-precio">
-
-                            Conocé nuestra historia
-
-                        </span>
-
-
-                        <h2 class="fw-bold brand-title mt-2 mb-4">
-
-                            Sobre Nosotros
-
-                        </h2>
-
-
-                        <p>
-
-                            En
-                            <strong>NombreDelLocal</strong>
-                            creemos que una buena comida no solo tiene que ser rica,
-                            sino también preparada con dedicación y llegar a tu mesa
-                            de la mejor manera.
-
-                        </p>
-
-
-                        <p>
-
-                            Nuestro local nació con la idea de combinar sabores
-                            caseros, productos de calidad y una atención cercana,
-                            ofreciendo una experiencia sencilla y cómoda para
-                            nuestros clientes.
-
-                        </p>
-
-
-                        <p class="mb-0">
-
-                            Preparamos cada pedido en el momento y trabajamos
-                            diariamente para que puedas disfrutar tus platos
-                            favoritos desde la comodidad de tu casa.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="col-12 col-lg-6">
-
-                        <img src="media/local.jpg" alt="Interior de NombreDelLocal" class="img-fluid rounded-4 shadow">
-
-                    </div>
-
+                <div class="alert brand-alert-success text-center mx-auto p-4 shadow-sm" style="max-width: 700px;">
+                    <h2 class="h4 fw-bold">¡Pedido Confirmado!</h2>
+                    <p class="mb-1">Gracias por tu compra. Tu pedido está siendo preparado.</p>
+                    <p id="resumen-pedido" class="fw-bold mb-0"></p>
                 </div>
-
             </div>
-
         </section>
 
     </main>
 
-
-    <!-- ==================================================
-         FOOTER / CONTACTO
-    =================================================== -->
-
-    <footer id="contacto" class="brand-footer pt-5 pb-3">
-
+    <!-- FOOTER -->
+    <footer class="brand-footer pt-5 pb-3 mt-5">
         <div class="container">
-
-
-            <div class="row g-5">
-
-
-                <!-- INFORMACIÓN -->
-
-                <div class="col-12 col-md-6 col-lg-4">
-
-                    <div class="d-flex align-items-center mb-3">
-
-                        <img src="media/favicon.ico" alt="Logo de NombreDelLocal" width="55" height="55" class="me-3">
-
-                        <h2 class="h4 fw-bold mb-0">
-                            NombreDelLocal
-                        </h2>
-
-                    </div>
-
-
-                    <p class="mb-0">
-
-                        Especialistas en entregar pedidos
-                        preparados con dedicación para que
-                        disfrutes tu comida favorita.
-
-                    </p>
-
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">NombreDelLocal</h3>
+                    <p>Especialistas en <strong>entregar pedidos</strong>, para su comodidad.</p>
                 </div>
 
-
-                <!-- ENLACES -->
-
-                <div class="col-12 col-md-6 col-lg-3">
-
-                    <h3 class="h5 fw-bold mb-3">
-                        Enlaces
-                    </h3>
-
-
-                    <ul class="list-unstyled mb-0">
-
-                        <li class="mb-2">
-                            <a href="#inicio" class="brand-footer-link">
-
-                                Inicio
-
-                            </a>
-                        </li>
-
-                        <li class="mb-2">
-                            <a href="#menu" class="brand-footer-link">
-
-                                Menú
-
-                            </a>
-                        </li>
-
-                        <li class="mb-2">
-                            <a href="#pedido" class="brand-footer-link">
-
-                                Mi pedido
-
-                            </a>
-                        </li>
-
-                        <li class="mb-2">
-                            <a href="#sobre-nosotros" class="brand-footer-link">
-
-                                Sobre Nosotros
-
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#contacto" class="brand-footer-link">
-
-                                Contacto
-
-                            </a>
-                        </li>
-
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">Enlaces</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#menu" class="brand-footer-link">Menú</a></li>
+                        <li><a href="#carrito" class="brand-footer-link">Carrito</a></li>
+                        <li><a href="#pedido" class="brand-footer-link">Mi pedido</a></li>
+                        <li><a href="#contacto" class="brand-footer-link">Contacto</a></li>
                     </ul>
-
                 </div>
 
-
-                <!-- CONTACTO -->
-
-                <div class="col-12 col-lg-5">
-
-                    <h3 class="h5 fw-bold mb-3">
-                        Contacto
-                    </h3>
-
-
-                    <!-- WhatsApp -->
-
-                    <div class="d-flex align-items-start mb-3">
-
-                        <i class="bi bi-whatsapp fs-4 me-3">
-
-                        </i>
-
-                        <div>
-
-                            <span class="d-block fw-semibold">
-                                WhatsApp
-                            </span>
-
-                            <a href="https://wa.me/5493815551234?text=Hola%2C%20quisiera%20hacer%20una%20consulta%20sobre%20un%20pedido."
-                                target="_blank" rel="noopener noreferrer" class="brand-footer-link">
-
-                                +54 9 381 555 1234
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Email -->
-
-                    <div class="d-flex align-items-start mb-3">
-
-                        <i class="bi bi-envelope-fill fs-4 me-3">
-
-                        </i>
-
-                        <div>
-
-                            <span class="d-block fw-semibold">
-                                Email
-                            </span>
-
-                            <a href="mailto:delivery-app@gmail.com" class="brand-footer-link">
-
-                                delivery-app@gmail.com
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Dirección -->
-
-                    <div class="d-flex align-items-start">
-
-                        <i class="bi bi-geo-alt-fill fs-4 me-3">
-
-                        </i>
-
-                        <div>
-
-                            <span class="d-block fw-semibold">
-                                Dirección
-                            </span>
-
-                            <span>
-                                Rivadavia 1050,
-                                San Miguel de Tucumán,
-                                Tucumán
-                            </span>
-
-
-                            <div class="mt-2">
-
-                                <a href="https://www.google.com/maps/search/?api=1&query=UTN+Facultad+Regional+Tucuman+Rivadavia+1050+San+Miguel+de+Tucuman"
-                                    target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark">
-
-                                    <i class="bi bi-map-fill me-1"></i>
-
-                                    Ver en Google Maps
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">Contacto</h3>
+                    <p class="mb-1">📧 delivery-app@gmail.com</p>
+                    <p class="mb-1">📞 +54 9 381 xxx xxxx</p>
+                    <p class="mb-0">📍 San Miguel de Tucumán, Argentina</p>
                 </div>
-
             </div>
 
-
-            <hr class="my-4">
-
-
-            <p class="text-center small mb-0">
-
-                &copy; 2026 Delivery App.
-                Todos los derechos reservados.
-
-            </p>
-
+            <hr class="mt-4">
+            <p class="text-center small mb-0">&copy; 2026 Delivery-app. Todos los derechos reservados.</p>
         </div>
-
     </footer>
 
-
-    <!-- ==================================================
-         MODAL INFORMACIÓN DEL PRODUCTO
-         Bootstrap Modal
-    =================================================== -->
-
-    <div class="modal fade" id="modal-info" tabindex="-1" aria-labelledby="modal-info-nombre" aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-
-            <div class="modal-content">
-
-
-                <div class="modal-header">
-
-                    <h2 id="modal-info-nombre" class="modal-title h5 fw-bold brand-title">
-
-                    </h2>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
-
-                    </button>
-
-                </div>
-
-
-                <div class="modal-body">
-
-                    <img id="modal-info-imagen" src="" alt=""
-                        class="img-fluid rounded mb-4 w-100 modal-producto-imagen">
-
-
-                    <h3 class="h6 fw-bold">
-                        Ingredientes
-                    </h3>
-
-                    <ul id="modal-info-ingredientes" class="mb-4">
-                    </ul>
-
-
-                    <h3 class="h6 fw-bold">
-                        Elaboración
-                    </h3>
-
-                    <p id="modal-info-elaboracion" class="text-muted mb-0">
-                    </p>
-
-                </div>
-
+    <!-- MODAL DE JAVASCRIPT -->
+    <div class="modal-info-overlay" id="modal-info">
+        <div class="modal-info-content">
+            <span id="modal-info-cerrar" class="modal-info-cerrar">&times;</span>
+            <img id="modal-info-imagen" src="" alt="">
+            <div class="modal-info-body">
+                <h3 id="modal-info-nombre" class="brand-title fw-bold"></h3>
+                <h6 class="fw-bold mt-3 mb-2">Ingredientes</h6>
+                <ul id="modal-info-ingredientes" class="mb-3"></ul>
+                <h6 class="fw-bold mb-2">Elaboración</h6>
+                <p id="modal-info-elaboracion" class="text-muted mb-0"></p>
             </div>
-
         </div>
-
     </div>
 
-
-    <!-- Bootstrap JS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-
-    <!-- JavaScript propio -->
-
-    <script src="script.js" defer>
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
 </body>
-
 </html>

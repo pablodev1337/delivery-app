@@ -175,3 +175,100 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 3000);
 });
+
+// ================================
+// SUBMENÚ DE PRODUCTOS
+// ================================
+
+const productosPorCategoria = {
+    hamburguesas: [
+        { nombre: "Hamburguesa Clásica", precio: "$5.000" },
+        { nombre: "Hamburguesa Doble", precio: "$6.500" },
+        { nombre: "Hamburguesa Completa", precio: "$7.000" }
+    ],
+
+    pizzas: [
+        { nombre: "Pizza Muzzarella", precio: "$8.000" },
+        { nombre: "Pizza Napolitana", precio: "$9.000" },
+        { nombre: "Pizza Especial", precio: "$10.000" }
+    ],
+
+    empanadas: [
+        { nombre: "Empanada de Carne", precio: "$1.200" },
+        { nombre: "Empanada de Pollo", precio: "$1.200" },
+        { nombre: "Empanada de Jamón y Queso", precio: "$1.300" }
+    ],
+
+    sanguches: [
+        { nombre: "Sándwich de Milanesa", precio: "$6.000" },
+        { nombre: "Sándwich Completo", precio: "$6.500" },
+        { nombre: "Lomito", precio: "$5.500" }
+    ],
+
+    postres: [
+        { nombre: "Flan Casero", precio: "$2.500" },
+        { nombre: "Brownie", precio: "$2.800" },
+        { nombre: "Cheesecake", precio: "$3.000" }
+    ],
+
+    bebidas: [
+        { nombre: "Coca-Cola", precio: "$2.500" },
+        { nombre: "Agua Mineral", precio: "$1.500" },
+        { nombre: "Jugo Natural", precio: "$2.000" }
+    ]
+};
+
+const nombresCategorias = {
+    hamburguesas: "Hamburguesas",
+    pizzas: "Pizzas",
+    empanadas: "Empanadas",
+    sanguches: "Sanguches",
+    postres: "Postres",
+    bebidas: "Bebidas"
+};
+
+// Buscar elementos del HTML
+const tarjetasCategorias = document.querySelectorAll(".category-card");
+const submenu = document.getElementById("submenu-productos");
+const submenuTitulo = document.getElementById("submenu-titulo");
+const submenuLista = document.getElementById("submenu-lista");
+
+// Detectar clic en cada categoría
+tarjetasCategorias.forEach(tarjeta => {
+    tarjeta.addEventListener("click", () => {
+
+        const categoria = tarjeta.dataset.category;
+        const productos = productosPorCategoria[categoria];
+
+        // Cambiar título
+        submenuTitulo.textContent = nombresCategorias[categoria];
+
+        // Mostrar los 3 productos
+        submenuLista.innerHTML = productos.map(producto => `
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm text-center">
+                    <div class="card-body">
+                        <h4 class="card-title">${producto.nombre}</h4>
+
+                        <p class="card-text fw-bold">
+                            ${producto.precio}
+                        </p>
+
+                        <button type="button" class="btn btn-primary">
+                            Agregar al pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `).join("");
+
+        // Mostrar el submenú usando Bootstrap
+        submenu.classList.remove("d-none");
+
+        // Bajar automáticamente hasta los productos
+        submenu.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+});

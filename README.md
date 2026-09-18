@@ -27,7 +27,8 @@ La aplicación permite a un usuario navegar un menú de comidas, agregar product
 * Pablo Cano
 * Alberto Roman
 * Kevin Mendoza
-* Matias Maza
+
+## Contribudor
 
 ## Tecnologías utilizadas
 

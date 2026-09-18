@@ -113,90 +113,286 @@
     <main>
 
         <!-- SECCIÓN MENÚ -->
-        <section id="menu" class="py-5">
-            <div class="container">
-                <h2 class="text-center fw-bold mb-5 brand-title">Nuestro Menú</h2>
-                <div class="row g-4">
+<section id="menu" class="menu-section">
 
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                        <article class="card h-100 shadow-sm brand-card" data-id="1">
-                            <img src="media/producto1.avif" class="card-img-top" alt="Hamburguesa con lechuga, tomate, queso y papas fritas" style="height: 180px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5">Hamburguesa Clásica y Papas Fritas</h3>
-                                <p class="card-text text-muted small flex-grow-1">Carne, lechuga, tomate, queso y papas fritas.</p>
-                                <p class="fw-bold brand-precio fs-5">$11.999</p>
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="1" data-nombre="Hamburguesa Clásica y Papas Fritas" data-precio="11999">Agregar al carrito</button>
-                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
-                                        data-nombre="Hamburguesa Clásica y Papas Fritas"
-                                        data-imagen="media/producto1.avif"
-                                        data-ingredientes="Pan brioche horneado en casa,Medallón de carne vacuna 100% Angus,Queso cheddar fundido,Lechuga mantecosa,Tomate perita fileteado,Cebolla morada encurtida,Salsa especial de la casa,Papas fritas cortadas a cuchillo"
-                                        data-elaboracion="En la parrilla de NombreDelLocal sellamos cada medallón a fuego vivo para conservar sus jugos, justo antes de armar la hamburguesa sobre pan brioche recién horneado. Las papas se cortan a mano todos los días y se fríen dos veces, al estilo de las bistronómicas porteñas, para lograr un exterior crocante y un interior bien tierno.">
-                                    Más información
-                                </button>
-                            </div>
-                        </article>
-                    </div>
+    <div class="container">
 
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                        <article class="card h-100 shadow-sm brand-card" data-id="2">
-                            <img src="media/producto2.jpg" class="card-img-top" alt="Pizza con salsa de tomate y muzzarella" style="height: 180px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5">Pizza de Muzzarella</h3>
-                                <p class="card-text text-muted small flex-grow-1">Salsa de tomate y muzzarella.</p>
-                                <p class="fw-bold brand-precio fs-5">$11.999</p>
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="2" data-nombre="Pizza de Muzzarella" data-precio="11999">Agregar al carrito</button>
-                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
-                                        data-nombre="Pizza de Muzzarella"
-                                        data-imagen="media/producto2.jpg"
-                                        data-ingredientes="Masa madre fermentada 24 horas,Salsa de tomate San Marzano,Muzzarella de elaboración diaria,Orégano fresco,Hilo de aceite de oliva extra virgen"
-                                        data-elaboracion="Nuestra masa fermenta lentamente durante un día entero, lo que le da esa textura liviana y alveolada típica de las pizzerías de barrio. Se cocina en horno de piedra a leña, a más de 400°C, hasta lograr un borde inflado y crocante, con la muzzarella justo en su punto de fundido.">
-                                    Más información
-                                </button>
-                            </div>
-                        </article>
-                    </div>
+        <!-- Encabezado -->
+        <div class="menu-header text-center">
+            <span class="menu-kicker">NUESTRO MENÚ</span>
 
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                        <article class="card h-100 shadow-sm brand-card" data-id="1">
-                            <img src="media/producto3.png" class="card-img-top" alt="Sandwich de milanesa, jamon, queso, huevo frito, tomate y lechuga con papas fritas" style="height: 180px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5">Sandwich de Milanesa y Papas Fritas</h3>
-                                <p class="card-text text-muted small flex-grow-1">Milanesa frita, jamon, queso, huevo frito, tomate y lechuga con papas fritas.</p>
-                                <p class="fw-bold brand-precio fs-5">$14.999</p>
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="3" data-nombre="Sandwich de Milanesa y Papas Fritas" data-precio="14999">Agregar al carrito</button>
-                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
-                                        data-nombre="Sandwich de Milanesa y Papas Fritas"
-                                        data-imagen="media/producto3.png"
-                                        data-ingredientes="Milanesa de ternera apanada a mano,Pan casero tostado,Jamón cocido,Queso fundido,Huevo frito con yema líquida,Tomate fresco,Lechuga crocante,Papas fritas caseras"
-                                        data-elaboracion="Apanamos la milanesa a mano con pan rallado casero y la freímos al momento del pedido para que llegue caliente y crocante. Se arma en capas sobre pan casero tostado, coronada con un huevo frito de yema líquida, al estilo de los bodegones tradicionales del centro de la ciudad.">
-                                    Más información
-                                </button>
-                            </div>
-                        </article>
-                    </div>
+            <h2>¿Qué deseas comer hoy?</h2>
 
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                        <article class="card h-100 shadow-sm brand-card" data-id="1">
-                            <img src="media/producto4.jpg" class="card-img-top" alt="Empanadas Fritas de carne, huevo, cebolla y pimiento" style="height: 180px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="card-title h5">Empanadas Fritas</h3>
-                                <p class="card-text text-muted small flex-grow-1">Carne, huevo, cebolla y pimiento.</p>
-                                <p class="fw-bold brand-precio fs-5">$17.999</p>
-                                <button class="btn brand-btn-primary w-100 btn-agregar-carrito" type="button" data-id="4" data-nombre="Empanadas Fritas (docena)" data-precio="17999">Agregar al carrito</button>
-                                <button class="btn brand-btn-primary w-100 mt-2 btn-mas-info" type="button"
-                                        data-nombre="Empanadas Fritas"
-                                        data-imagen="media/producto4.jpg"
-                                        data-ingredientes="Masa casera estirada a mano,Carne cortada a cuchillo,Cebolla salteada,Pimiento rojo,Huevo duro picado,Aceitunas verdes,Comino y pimentón dulce"
-                                        data-elaboracion="Seguimos la receta tradicional del norte argentino: carne cortada a cuchillo (nunca picada), salteada lentamente con cebolla y pimiento hasta que sueltan todo su sabor. El repulgue se hace a mano, una por una, y se fríen al momento en aceite bien caliente hasta lograr una masa dorada y crocante, como en las cocinas de campo.">
-                                    Más información
-                                </button>
+            <p>
+                Elegí una categoría para comenzar tu pedido
+            </p>
+        </div>
+
+
+        <!--
+        ============================================================
+        PUNTO DE CONEXIÓN PARA EL SUBMENÚ
+        ============================================================
+
+        COMPAÑERO:
+        Las tarjetas de abajo representan las CATEGORÍAS GENERALES.
+
+        Cada una tiene un atributo "data-category" que identifica
+        la categoría seleccionada:
+
+            hamburguesas
+            pizzas
+            empanadas
+            sanguches
+            postres
+            bebidas
+
+        Cuando desarrolles el SUBMENÚ DE PRODUCTOS, podés utilizar
+        estos atributos para detectar qué categoría seleccionó
+        el usuario.
+
+        Ejemplo:
+
+            data-category="hamburguesas"
+
+        También podés agregar acá el contenedor donde aparecerán
+        los productos específicos después de seleccionar una
+        categoría.
+
+        NO ES NECESARIO MODIFICAR EL DISEÑO DE ESTAS TARJETAS.
+        ============================================================
+        -->
+
+
+        <!-- Contenedor general de categorías -->
+        <div class="menu-categories">
+
+            <div class="row g-4 justify-content-center">
+
+
+                <!-- *Hamburguesas* -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <div
+                        class="category-card"
+                        data-category="hamburguesas"
+                    >
+
+                        <img
+                            src="media/producto1.avif"
+                            alt="Hamburguesas"
+                            class="category-image"
+                        >
+
+                        <div class="category-overlay">
+
+                            <div class="category-content">
+
+                                <span class="category-number">01</span>
+
+                                <h3>Hamburguesas</h3>
+
+                                <span class="category-action">
+                                    Ver opciones
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+
                             </div>
-                        </article>
+
+                        </div>
+
                     </div>
 
                 </div>
+
+
+                <!-- *Pizzas* -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <div
+                        class="category-card"
+                        data-category="pizzas"
+                    >
+
+                        <img
+                            src="media/producto2.jpg"
+                            alt="Pizzas"
+                            class="category-image"
+                        >
+
+                        <div class="category-overlay">
+
+                            <div class="category-content">
+
+                                <span class="category-number">02</span>
+
+                                <h3>Pizzas</h3>
+
+                                <span class="category-action">
+                                    Ver opciones
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- *Empanadas* -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <div
+                        class="category-card"
+                        data-category="empanadas"
+                    >
+
+                        <img
+                            src="media/producto4.jpg"
+                            alt="Empanadas"
+                            class="category-image"
+                        >
+
+                        <div class="category-overlay">
+
+                            <div class="category-content">
+
+                                <span class="category-number">03</span>
+
+                                <h3>Empanadas</h3>
+
+                                <span class="category-action">
+                                    Ver opciones
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- *Sanguches* -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <div
+                        class="category-card"
+                        data-category="sanguches"
+                    >
+
+                        <img
+                            src="media/producto3.png"
+                            alt="Sanguches"
+                            class="category-image"
+                        >
+
+                        <div class="category-overlay">
+
+                            <div class="category-content">
+
+                                <span class="category-number">04</span>
+
+                                <h3>Sanguches</h3>
+
+                                <span class="category-action">
+                                    Ver opciones
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- *Postres* -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <div
+                        class="category-card"
+                        data-category="postres"
+                    >
+
+                        <img
+                            src="media/producto5.webp"
+                            alt="Postres"
+                            class="category-image"
+                        >
+
+                        <div class="category-overlay">
+
+                            <div class="category-content">
+
+                                <span class="category-number">05</span>
+
+                                <h3>Postres</h3>
+
+                                <span class="category-action">
+                                    Ver opciones
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- *Bebidas* -->
+                <div class="col-12 col-sm-6 col-lg-4">
+
+                    <div
+                        class="category-card"
+                        data-category="bebidas"
+                    >
+
+                        <img
+                            src="media/producto6.jpg"
+                            alt="Bebidas"
+                            class="category-image"
+                        >
+
+                        <div class="category-overlay">
+
+                            <div class="category-content">
+
+                                <span class="category-number">06</span>
+
+                                <h3>Bebidas</h3>
+
+                                <span class="category-action">
+                                    Ver opciones
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
             </div>
-        </section>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- SECCIÓN CARRITO -->
         <aside id="carrito" class="py-5 bg-white">

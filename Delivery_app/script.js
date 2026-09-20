@@ -1,11 +1,11 @@
+// Estado principal del carrito (Array de productos)
 const carrito = [];
 
 const listaCarrito = document.querySelector("#carrito .list-group");
 const totalPrecioSpan = document.getElementById("total-precio");
 
-/**
- * Agrega un producto al carrito. Si ya existe (mismo id), le suma
- * una unidad a la cantidad en vez de duplicarlo en la lista.
+/**Agrega un producto al carrito. 
+ * Si el producto ya existe (mismo id), incrementa su cantidad.
  */
 function agregarAlCarrito(id, nombre, precio) {
     const itemExistente = carrito.find((item) => item.id === id);
@@ -13,99 +13,289 @@ function agregarAlCarrito(id, nombre, precio) {
     if (itemExistente) {
         itemExistente.cantidad += 1;
     } else {
-        carrito.push({ id, nombre, precio, cantidad: 1 });
+        carrito.push({
+            id: id,
+            nombre: nombre,
+            precio: Number(precio),
+            cantidad: 1
+        });
     }
-
     renderizarCarrito();
 }
 
+//Cambia la cantidad de un producto (sumar o restar unidades).
+function cambiarCantidad(id, cambio) {
+    const item = carrito.find((item) => item.id === id);
+    if (!item) return;
+
+    item.cantidad += cambio;
+
+    // Si la cantidad llega a 0 o menos, se quita del carrito
+    if (item.cantidad <= 0) {
+        eliminarDelCarrito(id);
+    } else {
+        renderizarCarrito();
+    }
+}
+
+//Elimina un producto por completo del carrito independientemente de su cantidad.
+function eliminarDelCarrito(id) {
+    const indice = carrito.findIndex((item) => item.id === id);
+
+    if (indice !== -1) {
+        carrito.splice(indice, 1);
+        renderizarCarrito();
+    }
+}
+
+//Calcula el monto total del pedido multiplicando precio por cantidad.
 function calcularTotal() {
     return carrito.reduce((acumulado, item) => acumulado + item.precio * item.cantidad, 0);
 }
 
+//Formatea un número como moneda local (pesos argentinos).
 function formatearPrecio(numero) {
     return "$" + numero.toLocaleString("es-AR");
 }
 
-/**
- * Reconstruye el HTML de la lista del carrito y el total,
- * a partir del estado actual del array "carrito".
- */
+//Renderiza el HTML del carrito y actualiza el valor total.
 function renderizarCarrito() {
+    if (!listaCarrito) return;
+
+    // Estado vacío
     if (carrito.length === 0) {
         listaCarrito.innerHTML = `
             <li class="list-group-item text-center text-muted py-4">
                 Todavía no agregaste productos al carrito.
             </li>
         `;
-        totalPrecioSpan.textContent = formatearPrecio(0);
+        if (totalPrecioSpan) totalPrecioSpan.textContent = formatearPrecio(0);
         return;
     }
 
+    // Renderizado de ítems
     listaCarrito.innerHTML = carrito
         .map((item) => {
             const subtotal = item.precio * item.cantidad;
             return `
-                <li class="list-group-item carrito-item-js py-3">
-                    <span class="fw-bold">${item.nombre} <span class="text-muted fw-normal">x${item.cantidad}</span></span>
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="fw-bold">${formatearPrecio(subtotal)}</span>
-                        <button class="btn btn-sm btn-danger btn-eliminar-item" type="button" data-id="${item.id}" title="Eliminar producto">
-                            <i class="bi bi-trash"></i>
-                        </button>
+                <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 py-3" data-id="${item.id}">
+                    <span class="fw-bold">${item.nombre}</span>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm brand-btn-primary btn-restar" type="button" data-id="${item.id}">-</button>
+                        <span class="fw-bold px-2">${item.cantidad}</span>
+                        <button class="btn btn-sm brand-btn-primary btn-sumar" type="button" data-id="${item.id}">+</button>
                     </div>
+                    <span class="fw-bold text-end">${formatearPrecio(subtotal)}</span>
+                    <button class="btn btn-sm btn-danger btn-eliminar-item" type="button" data-id="${item.id}" title="Eliminar producto">
+                        <i class="bi bi-trash"></i> Eliminar
+                    </button>
                 </li>
             `;
         })
         .join("");
 
-    totalPrecioSpan.textContent = formatearPrecio(calcularTotal());
-
-    // Enganchamos el evento click a los botones de eliminar recién creados
-    const botonesEliminar = listaCarrito.querySelectorAll(".btn-eliminar-item");
-    botonesEliminar.forEach((boton) => {
-        boton.addEventListener("click", () => {
-            eliminarDelCarrito(boton.dataset.id);
-        });
-    });
-}
-
-/**
- * Quita un producto del carrito por completo (sin importar la cantidad)
- * y vuelve a dibujar la lista.
- */
-function eliminarDelCarrito(id) {
-    const indice = carrito.findIndex((item) => item.id === id);
-
-    if (indice !== -1) {
-        carrito[indice].cantidad -= 1;
-
-        if (carrito[indice].cantidad <= 0) {
-            carrito.splice(indice, 1);
-        }
-
-        renderizarCarrito();
+    if (totalPrecioSpan) {
+        totalPrecioSpan.textContent = formatearPrecio(calcularTotal());
     }
+
+    // Asignar los eventos 'click' a los botones generados dinámicamente
+    listaCarrito.querySelectorAll(".btn-sumar").forEach((boton) => {
+        boton.addEventListener("click", () => cambiarCantidad(boton.dataset.id, 1));
+    });
+
+    listaCarrito.querySelectorAll(".btn-restar").forEach((boton) => {
+        boton.addEventListener("click", () => cambiarCantidad(boton.dataset.id, -1));
+    });
+
+    listaCarrito.querySelectorAll(".btn-eliminar-item").forEach((boton) => {
+        boton.addEventListener("click", () => eliminarDelCarrito(boton.dataset.id));
+    });
 }
 
-const botonesAgregar = document.querySelectorAll(".btn-agregar-carrito");
-
-botonesAgregar.forEach((boton) => {
-    boton.addEventListener("click", () => {
-        const id = boton.dataset.id;
-        const nombre = boton.dataset.nombre;
-        const precio = Number(boton.dataset.precio);
-
-        agregarAlCarrito(id, nombre, precio);
-    });
-});
-
-// Estado inicial: carrito vacío al cargar la página
+// Inicializar estado del carrito al cargar el script
 renderizarCarrito();
 
+//INTEGRACIÓN DEL FORMULARIO Y MEJORAS DE UX
+// Descuento global
+let porcentajeDescuento = 0;
+
+// Elementos del DOM del formulario
+const formPedido = document.getElementById("form-pedido");
+const radioDelivery = document.getElementById("entrega-delivery");
+const radioRetiro = document.getElementById("entrega-retiro");
+const grupoDireccion = document.getElementById("grupo-direccion");
+const inputDireccion = document.getElementById("direccion");
+const selectMetodoPago = document.getElementById("metodo-pago");
+const campoVuelto = document.getElementById("campo-vuelto");
+const montoEfectivo = document.getElementById("monto-efectivo");
+const feedbackEfectivo = document.getElementById("feedback-efectivo");
+const infoTransferencia = document.getElementById("info-transferencia");
+const inputCupon = document.getElementById("codigo-descuento");
+const btnAplicarCupon = document.getElementById("btn-aplicar-cupon");
+const mensajeCupon = document.getElementById("mensaje-cupon");
+const inputTelefono = document.getElementById("telefono");
+
+// Funcion de alternar modo de entrega (Delivery vs Retiro)
+if (radioDelivery && radioRetiro) {
+    radioDelivery.addEventListener("change", () => {
+        grupoDireccion.classList.remove("d-none");
+        inputDireccion.setAttribute("required", "required");
+    });
+
+    radioRetiro.addEventListener("change", () => {
+        grupoDireccion.classList.add("d-none");
+        inputDireccion.removeAttribute("required");
+        inputDireccion.classList.remove("is-invalid");
+    });
+}
+
+// Mostrar/ocultar detalles según el Método de Pago
+if (selectMetodoPago) {
+    selectMetodoPago.addEventListener("change", () => {
+        const metodo = selectMetodoPago.value;
+
+        // Efectivo
+        if (metodo === "efectivo") {
+            campoVuelto.classList.remove("d-none");
+        } else {
+            campoVuelto.classList.add("d-none");
+            montoEfectivo.classList.remove("is-invalid");
+        }
+
+        // Transferencia
+        if (metodo === "transferencia") {
+            infoTransferencia.classList.remove("d-none");
+        } else {
+            infoTransferencia.classList.add("d-none");
+        }
+    });
+}
+
+//Lógica para aplicar Código de Descuento
+const CUPONES_VALIDOS = {
+    "PRIMERPEDIDO": 15, // 15% de descuento
+    "PROMO10": 10       // 10% de descuento
+};
+
+if (btnAplicarCupon) {
+    btnAplicarCupon.addEventListener("click", () => {
+        const codigo = inputCupon.value.trim().toUpperCase();
+
+        if (CUPONES_VALIDOS[codigo]) {
+            porcentajeDescuento = CUPONES_VALIDOS[codigo];
+            mensajeCupon.className = "form-text text-success fw-bold";
+            mensajeCupon.textContent = `¡Cupón aplicado! Obtuviste un ${porcentajeDescuento}% de descuento.`;
+            inputCupon.disabled = true;
+            btnAplicarCupon.disabled = true;
+
+            // Recalcular el total desplegado en pantalla
+            if (typeof renderizarCarrito === "function") {
+                renderizarCarrito();
+            }
+        } else {
+            mensajeCupon.className = "form-text text-danger fw-bold";
+            mensajeCupon.textContent = "El código ingresado no es válido o ya venció.";
+        }
+    });
+}
+
+//Función extendida para calcular total aplicando descuento acumulado
+function calcularTotalConDescuento() {
+    // Si tu script ya tiene calcularTotal()
+    const totalOriginal = typeof calcularTotal === "function" ? calcularTotal() : 0;
+    if (porcentajeDescuento > 0) {
+        return totalOriginal - (totalOriginal * (porcentajeDescuento / 100));
+    }
+    return totalOriginal;
+}
+
+//Validación avanzada en tiempo real del teléfono
+if (inputTelefono) {
+    inputTelefono.addEventListener("input", () => {
+        // Elimina caracteres que no sean números
+        inputTelefono.value = inputTelefono.value.replace(/[^0-9]/g, "");
+
+        if (inputTelefono.value.length < 10) {
+            inputTelefono.classList.add("is-invalid");
+            inputTelefono.classList.remove("is-valid");
+        } else {
+            inputTelefono.classList.remove("is-invalid");
+            inputTelefono.classList.add("is-valid");
+        }
+    });
+}
+
+//Confirmación del Formulario al Submit
+if (formPedido) {
+    formPedido.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Validar carrito no vacío
+        const totalFinal = calcularTotalConDescuento();
+        if (totalFinal <= 0) {
+            alert("Tu carrito está vacío. Agregá productos antes de confirmar.");
+            return;
+        }
+
+        let formularioValido = true;
+
+        // Validar teléfono
+        if (inputTelefono.value.length < 10) {
+            inputTelefono.classList.add("is-invalid");
+            formularioValido = false;
+        }
+
+        // Validar monto para efectivo si aplica
+        if (selectMetodoPago.value === "efectivo" && montoEfectivo.value !== "") {
+            if (Number(montoEfectivo.value) < totalFinal) {
+                montoEfectivo.classList.add("is-invalid");
+                feedbackEfectivo.textContent = `El monto en efectivo debe ser al menos de ${formatearPrecio(totalFinal)}`;
+                formularioValido = false;
+            } else {
+                montoEfectivo.classList.remove("is-invalid");
+            }
+        }
+
+        // Validación nativa HTML5 de Bootstrap
+        if (!formPedido.checkValidity() || !formularioValido) {
+            e.stopPropagation();
+            formPedido.classList.add("was-validated");
+            return;
+        }
+
+        // Si todo está correcto:
+        const nombre = document.getElementById("nombre").value;
+        const esDelivery = radioDelivery.checked;
+        const direccion = esDelivery ? inputDireccion.value : "Retira en el local";
+        const metodoPago = selectMetodoPago.options[selectMetodoPago.selectedIndex].text;
+
+        // Mostrar aviso o alerta de confirmación
+        const seccionConfirmacion = document.getElementById("confirmacion");
+        const resumenPedido = document.getElementById("resumen-pedido");
+
+        if (resumenPedido) {
+            resumenPedido.innerHTML = `
+                <strong>Cliente:</strong> ${nombre}<br>
+                <strong>Modo:</strong> ${esDelivery ? "Delivery a " + direccion : "Retiro por local"}<br>
+                <strong>Pago:</strong> ${metodoPago}<br>
+                <strong>Total a pagar:</strong> ${typeof formatearPrecio === "function" ? formatearPrecio(totalFinal) : "$" + totalFinal}
+            `;
+        }
+
+        if (seccionConfirmacion) {
+            seccionConfirmacion.classList.remove("d-none");
+            seccionConfirmacion.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Limpieza tras confirmar
+        formPedido.reset();
+        formPedido.classList.remove("was-validated");
+        if (typeof carrito !== "undefined") carrito.length = 0;
+        if (typeof renderizarCarrito === "function") renderizarCarrito();
+    });
+}
 
 // MODAL DE "MÁS INFORMACIÓN"
-
 
 const modalInfo = document.getElementById("modal-info");
 const modalInfoImagen = document.getElementById("modal-info-imagen");
@@ -483,24 +673,12 @@ const nombresCategorias = {
 // ELEMENTOS DEL DOM
 // ========================================
 
-const tarjetasCategorias =
-    document.querySelectorAll(".category-card");
-
-const menuCategorias =
-    document.querySelector(".menu-categories");
-
-const submenu =
-    document.getElementById("submenu-productos");
-
-const submenuTitulo =
-    document.getElementById("submenu-titulo");
-
-const submenuLista =
-    document.getElementById("submenu-lista");
-
-const btnVolverMenu =
-    document.getElementById("btn-volver-menu");
-
+const tarjetasCategorias = document.querySelectorAll(".category-card");
+const menuCategorias = document.querySelector(".menu-categories");
+const submenu = document.getElementById("submenu-productos");
+const submenuTitulo = document.getElementById("submenu-titulo");
+const submenuLista = document.getElementById("submenu-lista");
+const btnVolverMenu = document.getElementById("btn-volver-menu");
 
 // ========================================
 // MOSTRAR SUBMENÚ
@@ -587,6 +765,7 @@ function mostrarSubmenu(categoria) {
     submenu.classList.remove("d-none");
 
 
+
     // Eventos de agregar al carrito
     const botonesAgregarSubmenu =
         submenuLista.querySelectorAll(".btn-agregar-submenu");
@@ -616,9 +795,7 @@ function mostrarSubmenu(categoria) {
 
 
     // Eventos de Más Información
-    const botonesMasInfo =
-        submenuLista.querySelectorAll(".btn-mas-info");
-
+    const botonesMasInfo = submenuLista.querySelectorAll(".btn-mas-info");
     botonesMasInfo.forEach(boton => {
 
         boton.addEventListener("click", () => {

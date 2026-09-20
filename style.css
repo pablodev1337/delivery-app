@@ -586,6 +586,132 @@ body {
     }
 }
 
+/* =========================================================
+   SUBMENÚ DE PRODUCTOS
+========================================================= */
+
+.submenu-header {
+    position: relative;
+}
+
+.submenu-titulo {
+    color: var(--secondary);
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    font-weight: 800;
+    margin: 0;
+}
+
+/* BOTÓN VOLVER */
+
+#btn-volver-menu {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px 18px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+#btn-volver-menu:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   TARJETAS DEL SUBMENÚ
+========================================================= */
+
+.submenu-producto-card {
+    border: 1px solid rgba(83, 83, 82, 0.15);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: 0 8px 20px rgba(43, 45, 66, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.submenu-producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(43, 45, 66, 0.16);
+}
+
+
+/* IMAGEN DEL PRODUCTO */
+
+.submenu-producto-imagen {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* CONTENIDO */
+
+.submenu-producto-body {
+    padding: 20px;
+}
+
+.submenu-producto-nombre {
+    color: var(--secondary);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.submenu-producto-precio {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+
+/* BOTONES */
+
+.submenu-producto-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-mas-info-submenu {
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    background: transparent;
+    font-weight: 700;
+}
+
+.btn-mas-info-submenu:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+}
+
+
+/* CELULARES */
+
+@media (max-width: 767px) {
+
+    .submenu-producto-imagen {
+        height: 200px;
+    }
+
+    .submenu-producto-body {
+        padding: 18px;
+    }
+
+}
+
 /* HERO CONTENT */
 
 .hero-content {

@@ -176,99 +176,526 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
 });
 
-// ================================
+// ========================================
 // SUBMENÚ DE PRODUCTOS
-// ================================
+// ========================================
 
 const productosPorCategoria = {
+
     hamburguesas: [
-        { nombre: "Hamburguesa Clásica", precio: "$5.000" },
-        { nombre: "Hamburguesa Doble", precio: "$6.500" },
-        { nombre: "Hamburguesa Completa", precio: "$7.000" }
+        {
+            id: "hamburguesa-clasica",
+            nombre: "Hamburguesa Clásica",
+            precio: 7500,
+            imagen: "media/submenu-hamburguesa-simple.jpg",
+            ingredientes: [
+                "Pan de hamburguesa",
+                "Carne de vaca",
+                "Lechuga",
+                "Tomate",
+                "Queso"
+            ],
+            elaboracion:
+                "Hamburguesa preparada con carne de vaca, acompañada de vegetales frescos y queso, servida en pan de hamburguesa."
+        },
+        {
+            id: "hamburguesa-doble",
+            nombre: "Hamburguesa Doble",
+            precio: 9500,
+            imagen: "media/submenu-hamburguesa-doble.jpg",
+            ingredientes: [
+                "Pan de hamburguesa",
+                "Doble carne de vaca",
+                "Queso",
+                "Lechuga",
+                "Tomate"
+            ],
+            elaboracion:
+                "Dos medallones de carne de vaca acompañados con queso y vegetales frescos."
+        },
+        {
+            id: "hamburguesa-completa",
+            nombre: "Hamburguesa Completa",
+            precio: 11000,
+            imagen: "media/submenu-hamburguesa-completa.jpg",
+            ingredientes: [
+                "Pan de hamburguesa",
+                "Carne de vaca",
+                "Queso",
+                "Lechuga",
+                "Tomate",
+                "Jamón",
+                "Huevo"
+            ],
+            elaboracion:
+                "Hamburguesa completa preparada con carne, queso, jamón, huevo y vegetales frescos."
+        }
     ],
 
     pizzas: [
-        { nombre: "Pizza Muzzarella", precio: "$8.000" },
-        { nombre: "Pizza Napolitana", precio: "$9.000" },
-        { nombre: "Pizza Especial", precio: "$10.000" }
+        {
+            id: "pizza-muzzarella",
+            nombre: "Pizza Muzzarella",
+            precio: 8000,
+            imagen: "media/submenu-pizza-muzzarella.webp",
+            ingredientes: [
+                "Masa de pizza",
+                "Salsa de tomate",
+                "Muzzarella",
+                "Orégano",
+                "Aceitunas"
+            ],
+            elaboracion:
+                "Pizza elaborada con masa casera, salsa de tomate y abundante queso muzzarella."
+        },
+        {
+            id: "pizza-napolitana",
+            nombre: "Pizza Napolitana",
+            precio: 10000,
+            imagen: "media/submenu-pizza-napolitana.jpg",
+            ingredientes: [
+                "Masa de pizza",
+                "Salsa de tomate",
+                "Muzzarella",
+                "Tomate",
+                "Orégano"
+            ],
+            elaboracion:
+                "Pizza con salsa de tomate, muzzarella y rodajas de tomate fresco."
+        },
+        {
+            id: "pizza-especial",
+            nombre: "Pizza Especial",
+            precio: 15000,
+            imagen: "media/submenu-pizza-especial.jpg",
+            ingredientes: [
+                "Masa de pizza",
+                "Salsa de tomate",
+                "Muzzarella",
+                "Jamón",
+                "Morrón",
+                "Aceitunas"
+            ],
+            elaboracion:
+                "Pizza especial preparada con muzzarella, jamón, morrón y aceitunas."
+        }
     ],
 
     empanadas: [
-        { nombre: "Empanada de Carne", precio: "$1.200" },
-        { nombre: "Empanada de Pollo", precio: "$1.200" },
-        { nombre: "Empanada de Jamón y Queso", precio: "$1.300" }
+        {
+            id: "empanada-carne",
+            nombre: "Empanada de Carne",
+            precio: 10000,
+            imagen: "media/submenu-empanadas-carne.jpg",
+            ingredientes: [
+                "Masa de empanada",
+                "Carne",
+                "Cebolla",
+                "Morrón",
+                "Condimentos",
+                "Huevo"
+            ],
+            elaboracion:
+                "Empanada rellena con carne condimentada, cebolla, morrón y huevo."
+        },
+        {
+            id: "empanada-pollo",
+            nombre: "Empanada de Pollo",
+            precio: 10000,
+            imagen: "media/submenu-empanadas-pollo.webp",
+            ingredientes: [
+                "Masa de empanada",
+                "Pollo",
+                "Cebolla",
+                "Morrón",
+                "Condimentos",
+                "Huevo"
+            ],
+            elaboracion:
+                "Empanada rellena con pollo desmenuzado, vegetales, condimentos y huevo."
+        },
+        {
+            id: "empanada-jyq",
+            nombre: "Empanada de Jamón y Queso",
+            precio: 8000,
+            imagen: "media/submenu-empanadas-jyq.jpg",
+            ingredientes: [
+                "Masa de empanada",
+                "Jamón",
+                "Queso"
+            ],
+            elaboracion:
+                "Empanada rellena con una combinación de jamón y queso."
+        }
     ],
 
     sanguches: [
-        { nombre: "Sándwich de Milanesa", precio: "$6.000" },
-        { nombre: "Sándwich Completo", precio: "$6.500" },
-        { nombre: "Lomito", precio: "$5.500" }
+        {
+            id: "sandwich-milanesa",
+            nombre: "Sándwich de Milanesa",
+            precio: 9000,
+            imagen: "media/submenu-sanguche-milanesa.avif",
+            ingredientes: [
+                "Pan",
+                "Milanesa",
+                "Lechuga",
+                "Tomate",
+                "Mayonesa"
+            ],
+            elaboracion:
+                "Sándwich preparado con milanesa y vegetales frescos."
+        },
+        {
+            id: "sandwich-completo",
+            nombre: "Sándwich Completo",
+            precio: 12000,
+            imagen: "media/submenu-sanguche-completo.webp",
+            ingredientes: [
+                "Pan",
+                "Milanesa",
+                "Jamón",
+                "Queso",
+                "Lechuga",
+                "Tomate",
+                "Huevo"
+            ],
+            elaboracion:
+                "Sándwich completo con milanesa, jamón, queso, huevo y vegetales."
+        },
+        {
+            id: "lomito",
+            nombre: "Lomito",
+            precio: 13000,
+            imagen: "media/submenu-lomito.jpg",
+            ingredientes: [
+                "Pan",
+                "Carne de lomito",
+                "Queso",
+                "Jamon",
+                "Lechuga",
+                "Tomate",
+                "Huevo"
+            ],
+            elaboracion:
+                "Lomito preparado con carne, queso, jamon, huevo y vegetales frescos."
+        }
     ],
 
     postres: [
-        { nombre: "Flan Casero", precio: "$2.500" },
-        { nombre: "Brownie", precio: "$2.800" },
-        { nombre: "Cheesecake", precio: "$3.000" }
+        {
+            id: "flan-casero",
+            nombre: "Flan Casero",
+            precio: 7000,
+            imagen: "media/submenu-flan-casero.webp",
+            ingredientes: [
+                "Leche",
+                "Huevos",
+                "Azúcar",
+                "Esencia de vainilla"
+            ],
+            elaboracion:
+                "Flan casero preparado con leche, huevos, azúcar y esencia de vainilla."
+        },
+        {
+            id: "brownie",
+            nombre: "Brownie",
+            precio: 6000,
+            imagen: "media/submenu-brownie.jpg",
+            ingredientes: [
+                "Chocolate",
+                "Harina",
+                "Huevos",
+                "Azúcar",
+                "Manteca"
+            ],
+            elaboracion:
+                "Brownie de chocolate con textura húmeda y sabor intenso a cacao."
+        },
+        {
+            id: "cheesecake",
+            nombre: "Cheesecake",
+            precio: 8000,
+            imagen: "media/submenu-cheesecake.jpg",
+            ingredientes: [
+                "Queso crema",
+                "Galletas",
+                "Manteca",
+                "Azúcar",
+                "Huevos"
+            ],
+            elaboracion:
+                "Cheesecake elaborado sobre una base de galletas y una cremosa preparación de queso."
+        }
     ],
 
     bebidas: [
-        { nombre: "Coca-Cola", precio: "$2.500" },
-        { nombre: "Agua Mineral", precio: "$1.500" },
-        { nombre: "Jugo Natural", precio: "$2.000" }
+        {
+            id: "coca-cola",
+            nombre: "Coca-Cola",
+            precio: 2500,
+            imagen: "media/submenu-cocacola.jpg",
+            ingredientes: [
+                "Coca-Cola"
+            ],
+            elaboracion:
+                "Bebida gaseosa Coca-Cola servida fría."
+        },
+        {
+            id: "agua",
+            nombre: "Agua Mineral",
+            precio: 2000,
+            imagen: "media/submenu-agua.jpg",
+            ingredientes: [
+                "Agua mineral"
+            ],
+            elaboracion:
+                "Agua mineral embotellada."
+        },
+        {
+            id: "jugo-naranja",
+            nombre: "Jugo Natural",
+            precio: 2000,
+            imagen: "media/submenu-jugo-naranja.jpg",
+            ingredientes: [
+                "Naranja"
+            ],
+            elaboracion:
+                "Jugo preparado a base de naranja."
+        }
     ]
+
 };
 
+
 const nombresCategorias = {
+
     hamburguesas: "Hamburguesas",
     pizzas: "Pizzas",
     empanadas: "Empanadas",
     sanguches: "Sanguches",
     postres: "Postres",
     bebidas: "Bebidas"
+
 };
 
-// Buscar elementos del HTML
-const tarjetasCategorias = document.querySelectorAll(".category-card");
-const submenu = document.getElementById("submenu-productos");
-const submenuTitulo = document.getElementById("submenu-titulo");
-const submenuLista = document.getElementById("submenu-lista");
 
-// Detectar clic en cada categoría
+// ========================================
+// ELEMENTOS DEL DOM
+// ========================================
+
+const tarjetasCategorias =
+    document.querySelectorAll(".category-card");
+
+const menuCategorias =
+    document.querySelector(".menu-categories");
+
+const submenu =
+    document.getElementById("submenu-productos");
+
+const submenuTitulo =
+    document.getElementById("submenu-titulo");
+
+const submenuLista =
+    document.getElementById("submenu-lista");
+
+const btnVolverMenu =
+    document.getElementById("btn-volver-menu");
+
+
+// ========================================
+// MOSTRAR SUBMENÚ
+// ========================================
+
+function mostrarSubmenu(categoria) {
+
+    const productos =
+        productosPorCategoria[categoria];
+
+    if (!productos) {
+        return;
+    }
+
+    submenuTitulo.textContent =
+        nombresCategorias[categoria];
+
+
+    submenuLista.innerHTML =
+        productos.map(producto => {
+
+            return `
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <div class="submenu-producto-card h-100">
+
+                        <img
+                            src="${producto.imagen}"
+                            alt="${producto.nombre}"
+                            class="submenu-producto-imagen"
+                        >
+
+                        <div class="submenu-producto-body">
+
+                            <h4 class="submenu-producto-nombre">
+                                ${producto.nombre}
+                            </h4>
+
+                            <p class="submenu-producto-precio">
+                                ${formatearPrecio(producto.precio)}
+                            </p>
+
+                            <div class="submenu-producto-botones">
+
+                                <button
+                                    type="button"
+                                    class="btn brand-btn-primary btn-agregar-submenu"
+                                    data-id="${producto.id}"
+                                    data-nombre="${producto.nombre}"
+                                    data-precio="${producto.precio}"
+                                >
+                                    <i class="bi bi-cart-plus"></i>
+                                    Agregar al pedido
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-mas-info-submenu btn-mas-info"
+                                    data-imagen="${producto.imagen}"
+                                    data-nombre="${producto.nombre}"
+                                    data-ingredientes="${producto.ingredientes.join(",")}"
+                                    data-elaboracion="${producto.elaboracion}"
+                                >
+                                    <i class="bi bi-info-circle"></i>
+                                    Más información
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+        }).join("");
+
+
+    // Ocultar categorías generales
+    menuCategorias.classList.add("d-none");
+
+    // Mostrar submenú
+    submenu.classList.remove("d-none");
+
+
+    // Eventos de agregar al carrito
+    const botonesAgregarSubmenu =
+        submenuLista.querySelectorAll(".btn-agregar-submenu");
+
+    botonesAgregarSubmenu.forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            const id =
+                boton.dataset.id;
+
+            const nombre =
+                boton.dataset.nombre;
+
+            const precio =
+                Number(boton.dataset.precio);
+
+            agregarAlCarrito(
+                id,
+                nombre,
+                precio
+            );
+
+        });
+
+    });
+
+
+    // Eventos de Más Información
+    const botonesMasInfo =
+        submenuLista.querySelectorAll(".btn-mas-info");
+
+    botonesMasInfo.forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            modalInfoImagen.src =
+                boton.dataset.imagen;
+
+            modalInfoImagen.alt =
+                boton.dataset.nombre;
+
+            modalInfoNombre.textContent =
+                boton.dataset.nombre;
+
+            modalInfoElaboracion.textContent =
+                boton.dataset.elaboracion;
+
+
+            const listaIngredientes =
+                boton.dataset.ingredientes.split(",");
+
+
+            modalInfoIngredientes.innerHTML =
+                listaIngredientes
+                    .map(
+                        ingrediente =>
+                            `<li>${ingrediente.trim()}</li>`
+                    )
+                    .join("");
+
+
+            modalInfo.classList.add("activo");
+
+        });
+
+    });
+
+
+    // Ir hacia el submenú
+    submenu.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+// ========================================
+// VOLVER AL MENÚ GENERAL
+// ========================================
+
+btnVolverMenu.addEventListener("click", () => {
+
+    submenu.classList.add("d-none");
+
+    menuCategorias.classList.remove("d-none");
+
+    menuCategorias.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+});
+
+
+// ========================================
+// CLICK EN UNA CATEGORÍA
+// ========================================
+
 tarjetasCategorias.forEach(tarjeta => {
+
     tarjeta.addEventListener("click", () => {
 
-        const categoria = tarjeta.dataset.category;
-        const productos = productosPorCategoria[categoria];
+        const categoria =
+            tarjeta.dataset.category;
 
-        // Cambiar título
-        submenuTitulo.textContent = nombresCategorias[categoria];
+        mostrarSubmenu(categoria);
 
-        // Mostrar los 3 productos
-        submenuLista.innerHTML = productos.map(producto => `
-            <div class="col-12 col-md-4">
-                <div class="card h-100 shadow-sm text-center">
-                    <div class="card-body">
-                        <h4 class="card-title">${producto.nombre}</h4>
-
-                        <p class="card-text fw-bold">
-                            ${producto.precio}
-                        </p>
-
-                        <button type="button" class="btn btn-primary">
-                            Agregar al pedido
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `).join("");
-
-        // Mostrar el submenú usando Bootstrap
-        submenu.classList.remove("d-none");
-
-        // Bajar automáticamente hasta los productos
-        submenu.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
     });
+
 });

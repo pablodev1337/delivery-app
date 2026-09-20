@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aplicación web de pedidos de comida estilo delivery">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
+    <meta name="author" content="Pablo Cano, Kevin Mendoza, Alberto Exequiel and Matias Maza">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Delivery App - Pedidos de comida">
+    <meta property="og:description" content="Pedí tu comida favorita online">
+    <meta property="og:image" content="media/preview.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+    <title>Delivery App</title>
+</head>
+<body>
+
+    <!-- PRESENTACIÓN -->
+    <div id="intro-screen" class="intro-screen">
+        <div class="intro-content text-center text-white">
+            <img src="media/favicon.ico" alt="Logo de NombreDelLocal" class="intro-logo">
+            <h1 class="fw-bold">
+                ¡Bienvenidos a NombreDelLocal!
+            </h1>
+        </div>
+    </div>
+
+    <!-- HEADER / HERO -->
+    <header id="inicio" class="hero position-relative">
+
+        <!-- CARRUSEL BOOTSTRAP -->
+        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="media/carrusel-producto1.jpg" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Hamburguesa de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto2.avif" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Pizza de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto3.jpg" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Sandwich de milanesa de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto4.jpg" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Empanadas de NombreDelLocal">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="media/carrusel-producto5.avif" class="d-block w-100 h-100 object-fit-cover"
+                        alt="Postres de NombreDelLocal">
+                </div>
+            </div>
+        </div>
+
+        <!-- Oscurecimiento del carrusel -->
+        <div class="hero-overlay"></div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg brand-navbar">
+            <div class="container-fluid px-4">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-around align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">
+                                Menú
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pedido">
+                                Mi pedido
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre-nosotros">
+                                Sobre Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- CONTENIDO DEL HERO -->
+        <div class="hero-content position-relative text-center text-white">
+            <img src="media/favicon.ico" alt="Logo de NombreDelLocal" class="hero-logo">
+            <h1 class="display-4 fw-bold">
+                ¡Bienvenidos a NombreDelLocal!
+            </h1>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- SECCIÓN MENÚ -->
+        <section id="menu" class="menu-section">
+
+            <div class="container">
+
+                <!-- Encabezado -->
+                <div class="menu-header text-center">
+                    <span class="menu-kicker">NUESTRO MENÚ</span>
+
+                    <h2>¿Qué deseas comer hoy?</h2>
+
+                    <p>
+                        Elegí una categoría para comenzar tu pedido
+                    </p>
+                </div>
+
+
+                <!--
+                ============================================================
+                PUNTO DE CONEXIÓN PARA EL SUBMENÚ
+                ============================================================
+
+                COMPAÑERO:
+                Las tarjetas de abajo representan las CATEGORÍAS GENERALES.
+
+                Cada una tiene un atributo "data-category" que identifica
+                la categoría seleccionada:
+
+                    hamburguesas
+                    pizzas
+                    empanadas
+                    sanguches
+                    postres
+                    bebidas
+
+                Cuando desarrolles el SUBMENÚ DE PRODUCTOS, podés utilizar
+                estos atributos para detectar qué categoría seleccionó
+                el usuario.
+
+                Ejemplo:
+
+                    data-category="hamburguesas"
+
+                También podés agregar acá el contenedor donde aparecerán
+                los productos específicos después de seleccionar una
+                categoría.
+
+                NO ES NECESARIO MODIFICAR EL DISEÑO DE ESTAS TARJETAS.
+                ============================================================
+                -->
+
+
+                <!-- Contenedor general de categorías -->
+                <div class="menu-categories">
+
+                    <div class="row g-4 justify-content-center">
+
+
+                        <!-- *Hamburguesas* -->
+                        <div class="col-12 col-sm-6 col-lg-4">
+
+                            <div
+                                class="category-card"
+                                data-category="hamburguesas"
+                            >
+
+                                <img
+                                    src="media/producto1.avif"
+                                    alt="Hamburguesas"
+                                    class="category-image"
+                                >
+
+                                <div class="category-overlay">
+
+                                    <div class="category-content">
+
+                                        <span class="category-number">01</span>
+
+                                        <h3>Hamburguesas</h3>
+
+                                        <span class="category-action">
+                                            Ver opciones
+                                            <i class="bi bi-arrow-up-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- *Pizzas* -->
+                        <div class="col-12 col-sm-6 col-lg-4">
+
+                            <div
+                                class="category-card"
+                                data-category="pizzas"
+                            >
+
+                                <img
+                                    src="media/producto2.jpg"
+                                    alt="Pizzas"
+                                    class="category-image"
+                                >
+
+                                <div class="category-overlay">
+
+                                    <div class="category-content">
+
+                                        <span class="category-number">02</span>
+
+                                        <h3>Pizzas</h3>
+
+                                        <span class="category-action">
+                                            Ver opciones
+                                            <i class="bi bi-arrow-up-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- *Empanadas* -->
+                        <div class="col-12 col-sm-6 col-lg-4">
+
+                            <div
+                                class="category-card"
+                                data-category="empanadas"
+                            >
+
+                                <img
+                                    src="media/producto4.jpg"
+                                    alt="Empanadas"
+                                    class="category-image"
+                                >
+
+                                <div class="category-overlay">
+
+                                    <div class="category-content">
+
+                                        <span class="category-number">03</span>
+
+                                        <h3>Empanadas</h3>
+
+                                        <span class="category-action">
+                                            Ver opciones
+                                            <i class="bi bi-arrow-up-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- *Sanguches* -->
+                        <div class="col-12 col-sm-6 col-lg-4">
+
+                            <div
+                                class="category-card"
+                                data-category="sanguches"
+                            >
+
+                                <img
+                                    src="media/producto3.png"
+                                    alt="Sanguches"
+                                    class="category-image"
+                                >
+
+                                <div class="category-overlay">
+
+                                    <div class="category-content">
+
+                                        <span class="category-number">04</span>
+
+                                        <h3>Sanguches</h3>
+
+                                        <span class="category-action">
+                                            Ver opciones
+                                            <i class="bi bi-arrow-up-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- *Postres* -->
+                        <div class="col-12 col-sm-6 col-lg-4">
+
+                            <div
+                                class="category-card"
+                                data-category="postres"
+                            >
+
+                                <img
+                                    src="media/producto5.webp"
+                                    alt="Postres"
+                                    class="category-image"
+                                >
+
+                                <div class="category-overlay">
+
+                                    <div class="category-content">
+
+                                        <span class="category-number">05</span>
+
+                                        <h3>Postres</h3>
+
+                                        <span class="category-action">
+                                            Ver opciones
+                                            <i class="bi bi-arrow-up-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- *Bebidas* -->
+                        <div class="col-12 col-sm-6 col-lg-4">
+
+                            <div
+                                class="category-card"
+                                data-category="bebidas"
+                            >
+
+                                <img
+                                    src="media/producto6.jpg"
+                                    alt="Bebidas"
+                                    class="category-image"
+                                >
+
+                                <div class="category-overlay">
+
+                                    <div class="category-content">
+
+                                        <span class="category-number">06</span>
+
+                                        <h3>Bebidas</h3>
+
+                                        <span class="category-action">
+                                            Ver opciones
+                                            <i class="bi bi-arrow-up-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!-- SUBMENÚ DE PRODUCTOS -->
+                <div id="submenu-productos" class="d-none mt-5">
+                
+                    <div class="submenu-header text-center mb-4">
+                
+                        <button id="btn-volver-menu" type="button" class="btn btn-outline-secondary mb-4">
+                            <i class="bi bi-arrow-left"></i>
+                            Volver al menú
+                        </button>
+                
+                        <h3 id="submenu-titulo" class="submenu-titulo"></h3>
+                
+                    </div>
+                
+                    <div id="submenu-lista" class="row g-4 justify-content-center"></div>
+                
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN CARRITO -->
+        <aside id="carrito" class="py-5 bg-white">
+            <div class="container">
+                <div class="card shadow-sm brand-card mx-auto" style="max-width: 900px;">
+                    <div class="card-body p-4">
+                        <h2 class="h4 fw-bold mb-4 brand-title">Tu Carrito</h2>
+                        <ul class="list-group list-group-flush">
+                        </ul>
+                        <div class="d-flex justify-content-end mt-4">
+                            <p class="fs-5 fw-bold brand-title mb-0">Total: <span id="total-precio">$0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- SECCIÓN FORMULARIO DE PEDIDO -->
+        <section id="pedido" class="py-5">
+            <div class="container">
+                <div class="card shadow-sm brand-card mx-auto" style="max-width: 700px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center fw-bold mb-4 brand-title">Confirmar Pedido</h2>
+
+                        <form id="form-pedido" class="row g-3" novalidate>
+
+                            <!-- Modo de Entrega -->
+                            <div class="col-12 mb-2">
+                                <label class="form-label fw-semibold d-block">Modo de entrega</label>
+                                <div class="btn-group w-100" role="group" aria-label="Modo de entrega">
+                                    <input type="radio" class="btn-check" name="tipo-entrega" id="entrega-delivery" value="delivery" checked>
+                                    <label class="btn btn-outline-primary fw-bold" for="entrega-delivery">
+                                        <i class="bi bi-truck me-1"></i> Delivery
+                                    </label>
+
+                                    <input type="radio" class="btn-check" name="tipo-entrega" id="entrega-retiro" value="retiro">
+                                    <label class="btn btn-outline-primary fw-bold" for="entrega-retiro">
+                                        <i class="bi bi-shop me-1"></i> Retirar en local
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Nombre completo -->
+                            <div class="col-12">
+                                <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                                <div class="invalid-feedback">Por favor, ingresá tu nombre completo.</div>
+                            </div>
+
+                            <!-- Dirección de entrega (dinámico según envío) -->
+                            <div class="col-12" id="grupo-direccion">
+                                <label for="direccion" class="form-label fw-semibold">Dirección de entrega</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required placeholder="Ej: Av. Alem 123">
+                                <div class="invalid-feedback">Ingresá una dirección válida para la entrega.</div>
+                            </div>
+
+                            <!-- Teléfono (Validación en tiempo real) -->
+                            <div class="col-12 col-md-6">
+                                <label for="telefono" class="form-label fw-semibold">Teléfono / WhatsApp</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ej: 3811234567">
+                                <div class="invalid-feedback">Ingresá un número válido (mínimo 10 dígitos sin 0 ni 15).</div>
+                            </div>
+
+                            <!-- Método de pago -->
+                            <div class="col-12 col-md-6">
+                                <label for="metodo-pago" class="form-label fw-semibold">Método de pago</label>
+                                <select class="form-select" id="metodo-pago" name="metodo-pago">
+                                    <option value="efectivo">Efectivo</option>
+                                    <option value="transferencia">Transferencia</option>
+                                    <option value="tarjeta">Tarjeta (POSNET al entregar)</option>
+                                </select>
+                            </div>
+
+                            <!-- Detalle dinámico para Efectivo -->
+                            <div class="col-12" id="campo-vuelto">
+                                <label for="monto-efectivo" class="form-label fw-semibold">¿Con cuánto vas a pagar? <small class="text-muted">(para llevar cambio)</small></label>
+                                <input type="number" class="form-control" id="monto-efectivo" placeholder="Ej: 10000" min="0">
+                                <div class="invalid-feedback" id="feedback-efectivo">El monto ingresado debe ser mayor o igual al total a pagar.</div>
+                            </div>
+
+                            <!-- Detalle dinámico para Transferencia -->
+                            <div class="col-12 d-none" id="info-transferencia">
+                                <div class="alert alert-info border-0 shadow-sm mb-0">
+                                    <p class="fw-bold mb-1"><i class="bi bi-bank me-1"></i> Datos para transferir:</p>
+                                    <p class="small mb-1"><strong>Alias:</strong> nombredellocal.mp</p>
+                                    <p class="small mb-0"><strong>CBU:</strong> 0000003100012345678901</p>
+                                </div>
+                            </div>
+
+                            <!-- Código de Descuento -->
+                            <div class="col-12 mt-3">
+                                <label for="codigo-descuento" class="form-label fw-semibold">Código de descuento</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control text-uppercase" id="codigo-descuento" placeholder="Ej: PRIMERPEDIDO">
+                                    <button class="btn btn-outline-secondary fw-bold" type="button" id="btn-aplicar-cupon">Aplicar</button>
+                                </div>
+                                <div id="mensaje-cupon" class="form-text mt-1"></div>
+                            </div>
+
+                            <!-- Botón de Confirmación -->
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn brand-btn-primary w-100 py-2 fw-bold">
+                                    <i class="bi bi-check-circle me-1"></i> Confirmar Pedido
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONFIRMACIÓN -->
+        <section id="confirmacion" class="py-5 d-none">
+            <div class="container">
+                <div class="alert brand-alert-success text-center mx-auto p-4 shadow-sm" style="max-width: 700px;">
+                    <h2 class="h4 fw-bold">¡Pedido Confirmado!</h2>
+                    <p class="mb-1">Gracias por tu compra. Tu pedido está siendo preparado.</p>
+                    <p id="resumen-pedido" class="fw-bold mb-0"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SOBRE NOSOTROS -->
+
+        <section id="sobre-nosotros" class="py-5">
+            <div class="container">
+                ```
+                <div class="row align-items-center g-5">
+
+                    <!-- Imagen -->
+                    <div class="col-12 col-lg-6">
+                        <img
+                            src="media/carrusel-producto1.jpg"
+                            class="img-fluid rounded-4 shadow-sm w-100"
+                            alt="Comida preparada por NombreDelLocal"
+                        >
+                    </div>
+
+                    <!-- Historia -->
+                    <div class="col-12 col-lg-6">
+
+                        <p class="fw-bold mb-2 brand-precio">
+                            SOBRE NOSOTROS
+                        </p>
+
+                        <h2 class="fw-bold mb-4 brand-title">
+                            Una historia que empezó con una idea sencilla
+                        </h2>
+
+                        <p class="text-muted">
+                            Todo comenzó con una idea simple: preparar comida rica,
+                            abundante y hecha con dedicación, para que cada persona
+                            pudiera disfrutarla desde la comodidad de su casa.
+                        </p>
+
+                        <p class="text-muted">
+                            Con el tiempo, ese pequeño sueño fue creciendo. Hoy
+                            seguimos manteniendo la misma esencia: elegir buenos
+                            ingredientes, preparar cada pedido con cuidado y ofrecer
+                            una experiencia agradable desde el primer clic hasta
+                            que la comida llega a la mesa.
+                        </p>
+
+                        <blockquote class="border-start border-4 ps-3 my-4">
+                            <p class="fst-italic mb-0">
+                                “Un buen pedido no es solamente una comida.
+                                Es un momento para compartir, darse un gusto
+                                y disfrutar.”
+                            </p>
+                        </blockquote>
+
+                        <p class="fw-bold mb-0">
+                            Gracias por elegirnos y ser parte de nuestra historia.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            ```
+
+        </section>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="brand-footer pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">NombreDelLocal</h3>
+                    <p>Especialistas en <strong>entregar pedidos</strong>, para su comodidad.</p>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">Enlaces</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#menu" class="brand-footer-link">Menú</a></li>
+                        <li><a href="#carrito" class="brand-footer-link">Carrito</a></li>
+                        <li><a href="#pedido" class="brand-footer-link">Mi pedido</a></li>
+                        <li><a href="#contacto" class="brand-footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h3 class="h5 fw-bold">Contacto</h3>
+                    <p class="mb-1">📧 delivery-app@gmail.com</p>
+                    <p class="mb-1">📞 +54 9 381 xxx xxxx</p>
+                    <p class="mb-0">📍 San Miguel de Tucumán, Argentina</p>
+                </div>
+            </div>
+
+            <hr class="mt-4">
+            <p class="text-center small mb-0">&copy; 2026 Delivery-app. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE JAVASCRIPT -->
+    <div class="modal-info-overlay" id="modal-info">
+        <div class="modal-info-content">
+            <span id="modal-info-cerrar" class="modal-info-cerrar">&times;</span>
+            <img id="modal-info-imagen" src="" alt="">
+            <div class="modal-info-body">
+                <h3 id="modal-info-nombre" class="brand-title fw-bold"></h3>
+                <h6 class="fw-bold mt-3 mb-2">Ingredientes</h6>
+                <ul id="modal-info-ingredientes" class="mb-3"></ul>
+                <h6 class="fw-bold mb-2">Elaboración</h6>
+                <p id="modal-info-elaboracion" class="text-muted mb-0"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

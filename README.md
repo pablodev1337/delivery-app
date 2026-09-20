@@ -4,17 +4,16 @@ Mini aplicación web estilo delivery desarrollada como proyecto final de la Tecn
 
 ## Descripción
 
-La aplicación permite a un usuario navegar un menú de comidas, agregar productos a un carrito, modificar cantidades, eliminar productos, ver el total del pedido y completar un formulario de pedido con confirmación final.
+La idea principal del proyecto ‘Delivery App’ es una página web para pedir comidas, bebidas y postres de un restaurant en Tucumán, Argentina. La cual también incorpore un sistema de seguimiento de delivery’s que lleve el pedido hacia la casa del cliente.
 
 ## Funcionalidades
 
-* Menú de comidas.
-* Agregar productos al carrito.
-* Más información de productos.
+* Menú de comidas/postres/bebidas.
+* Agregar productos al pedido.
 * Cambiar cantidades de productos.
 * Saber más información de los productos.
 * Calcular total del pedido.
-* Eliminar productos del carrito.
+* Eliminar productos del pedido.
 * Formulario de pedido.
 * Confirmación del pedido.
 * Diseño responsive para distintos tamaños de pantalla.
@@ -28,7 +27,9 @@ La aplicación permite a un usuario navegar un menú de comidas, agregar product
 * Alberto Roman
 * Kevin Mendoza
 
-## Contribudor
+## Contribuciones y Agradecimientos
+
+Queremos agradecer especialmente a Matias Maza por contribuir en parte del código.
 
 ## Tecnologías utilizadas
 
@@ -66,9 +67,7 @@ Bootstrap se utiliza en conjunto con CSS propio del proyecto para mantener la id
 
 ## Grid
 
-* En `.menu__grid`, para mostrar las tarjetas de producto en columnas que se adaptan automáticamente al ancho de pantalla mediante `repeat(auto-fit, minmax(...))`.
-* En `#form-pedido`, para organizar los campos del formulario de pedido en una grilla vertical con espaciado uniforme.
-* Además, Bootstrap aporta su propio sistema de grillas mediante las clases `container`, `row` y `col-*`, utilizado en diferentes secciones de la aplicación para distribuir el contenido de manera responsive.
+* Actualmente todo el layout usa el sistema de grillas de Bootstrap mediante las clases `container`, `row` y `col-*`, utilizado en diferentes secciones de la aplicación para distribuir el contenido de manera responsive. El css grid viejo quedo comentado tras la migración de bootstrap.
 
 ## Variables CSS
 
@@ -77,11 +76,9 @@ Definidas en `:root`:
 * `--primary` y `--primary-dark`: color naranja principal, usado en botones y elementos de acción.
 * `--secondary`: azul oscuro, usado en textos fuertes y títulos.
 * `--success`: verde, para estados positivos (confirmación de pedido).
-* `--warning`: ámbar, para precios y alertas.
 * `--danger`: rojo, para el botón de eliminar producto.
 * `--background`: color de fondo general de la página.
 * `--surface`: blanco, usado en tarjetas y el header.
-* `--text` y `--text-muted`: colores de texto principal y secundario.
 * `--border`: color de bordes en tarjetas, inputs y separadores.
 
 Estas variables se utilizan junto con las clases personalizadas del proyecto para modificar y mantener una identidad visual consistente.
@@ -152,8 +149,9 @@ O puedes ver la página funcional en: https://delivery-app-tup.netlify.app/
 
 * `main`: rama estable, versión de entrega.
 * `dev`: rama principal de desarrollo.
-* `feature/nombre-de-la-tarea`: ramas de trabajo individuales, que se integran a `dev` mediante Pull Requests.
+* `feature/maquetado-nombre-de-la-tarea`: ramas de trabajo individuales, que se integran a `dev` mediante Pull Requests.
 * `refactor/nombre-de-la-tarea`: ramas de refactorización.
+* `feature/funcionalidades-nombre-de-la-tarea`: ramas de trabajo donde se incorpora código de JavaScript.
 
 ## Estado del proyecto
 
